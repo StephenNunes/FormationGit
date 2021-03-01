@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Git for the rockstar developper </title>
+		<title>Formation Git</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/white.css">
@@ -26,66 +26,169 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<!-- MODULE 01: Introduction -->
+				<!-- MODULE 01: Git -->
 				<section>
-					<section>
-						Git for the rockstar developper
+					<section data-background-image="assets/gitIcon.svg" data-background-size="10%" >
+                        <h1>Formation Git</h1>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
 					</section>
 					<section>
-						GIT est le gestionnaire de version le plus populaire, utilisé dans de nombreux projets open-source comme AngularJS, NodeJS,
+						<h4>A propos de moi</h4>
+						Stephen Nunes<br />
+						Expert technique Junior - CGI - 5 ans<br />
+						stephen.nunes@cgi.com
+					</section>
+					<section>
+						🎨 : Manipulation à faire<br />
+						🎤 : A vous la parole
+					</section>
+				</section>
+                <!-- MODULE 02: Installation -->
+				<section>
+					<section data-background-image="assets/macon.jpg" >
+						<h1>Installation</h1><br />
+                    </section>
+                    <section>
+                        Téléchargement de Git<br />
+                        <a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a><br/>
+						🎨
+					</section>
+				</section>
+                <!-- MODULE 03: Introduction -->       
+                <section>
+                    <section data-background-image="assets/start.webp" >
+                        <h1>Introduction</h1>
+                    </section>
+					<section>
+						Connaissez vous Git ?<br />
+						🎤
+					</section>
+                    <section>
+						Git est le gestionnaire de versions le plus populaire, utilisé dans de nombreux projets open-source comme AngularJS, NodeJS,
 						Spring Framework, Bootstrap, Gradle...
 					</section>
 					<section>
-						Il a été créé par Linus Torvalds (auteur du noyau Linux). Contrairement à SVN, sa particularité est d’être
-						<b>décentralisé</b>.
+						Contrairement à SVN, Git a pour particularité d'être <b>décentralisé</b>.
 					</section>
 					<section>
 						<h4>Decentralisé</h4>
-						<p>Un dépôt local GIT contient une <b>copie complète du repository</b> distant dans le dossier caché .git.​</p>
+						<p>Un dépôt local Git contient une <b>copie complète du repository distant</b> dans le dossier caché .git.
+                        C'est à dire, qu'en local, il est contenu les fichiers et dossier et tout l'historique des changements fait sur ceux-ci​</p>
+                        
 						<p>Un dépôt local SVN ne contient que <b>les méta datas des fichiers</b>, le reste est stocké sur le serveur distant.​</p>
 					</section>
+                    <section>
+                        <h4>Centralisé (SVN, TFVC, etc)</h4>
+                        <img data-src="assets/centralise.png" style="height:60%; width:60%;">
+                    </section>
+                    <section>
+                        <h4>Décentralisé (Git)</h4>
+                        <img data-src="assets/decentralise.png" style="height:40%; width:40%;">
+                    </section>
+                    <section>
+                        <h4>Dépôt local</h4>
+                        <p>Un dossier sur votre ordinateur qui contient
+                        <ul>
+                          <li>Le dossier .git qui contient toute la configuration du repository git (historique des changements, etc)</li>
+                          <li>Vos fichiers et dossiers de code, documentation, etc</li>
+                        </ul></p>
+                        <img data-src="assets/depotLocal.png" style="height:40%; width:40%;">
+                    </section>
 					<section>
-						Avec GIT les données sont stockées dans le <b>repo local</b> puis un push permet de les envoyer sur le serveur distant. 
-						L’avantage est de pouvoir travailler en local indépendamment du serveur, puis envoyer les modifications seulement lorsque c’est nécessaire.
+                        L’avantage du mode décenstralisé est de pouvoir travailler en local indépendamment du serveur, puis envoyer les modifications seulement lorsque c’est nécessaire
+					</section>
+					<section>
+						<h4>Les 3 zones de Git</h4>
+                        <ul>
+                          <li><b>Répertoire de travail</b> (Working directory)</li>
+                          <li><b>Zone de transit</b> (Staging area)</li>
+                          <li><b>Dépôt local</b> (Repository)</li>
+                        </ul>
+					</section>
+					<section>
+                        <ul>
+                          <li><b>Répertoire de travail</b> : Où se trouve vos fichiers/dossier de code, documentation</li>
+                          <li><b>Zone de transit</b> : Où se trouve les fichiers que vous vous apprétez à commit</li>
+                          <li><b>Dépôt local</b> : L'historique de chaque changements (commit)</li>
+                        </ul>
+					</section>
+					<section>
+						<img data-src="assets/threeZones.png">
+					</section>
+					<section>
+					<table>
+						<h5>Vocabulaire pour les 3 zones</h5>
+						<tr>
+							<td>Add</td>
+							<td>Ajouter des fichiers du <b>Working directory</b> au <b>Staging area</b></td>
+						</tr>
+						<tr>
+							<td>Commit</td>
+							<td>Valider la modifications de fichier et les transférer du <b>Staging area</b> au <b>Repository local</b></td>
+						</tr>
+						<tr>
+							<td>Checkout</td>
+							<td>Appliquer les modifications du <b>Repository local</b> dans le <b>Working directory</b></td>
+						</tr>
+					</table>
 					</section>
 					<section>
 						<h4>Branches</h4>
-						Pour chaque nouvelles features une branche est créée puis fusionnée à la branche principale, 
+						Pour chaque nouvelles fonctionnalités ou correction de bug, une branche est créée puis fusionnée à la branche principale, 
 						à la différence de SVN où une seule branche principale est utilisée.​
 					</section>
 					<section>
-							Chaque fonctionnalité est isolée dans une branche spécifique. 
-							On s’assure simplement que la branche principale reste stable après l’intégration des différentes fonctionnalités.​
+							Chaque fonctionnalité / correction de bug est isolée dans une branche spécifique.
+							On s’assure simplement que la branche principale reste stable après l’intégration des différentes fonctionnalités et corrections de bug.​
 					</section>
 					<section>
 						<img data-src="assets/gitbranches.png">
 					</section>
-				</section>
-				<!-- MODULE 02: Basic GIT  -->
+                </section>
+				<!-- MODULE 04: Basic Git  -->
 				<section>
-					<section>Git basics</section>
+					<section data-background-image="assets/lego.jpg"><h1>Git basics</h1></section>
 					<section>
 						Identifier l'auteur de chaque modification du repository
 						<pre>
 							<code data-trim data-noescape>
-									git config --global user.name "Joani COUMA"
-									git config --global user.email joani.couma@cgi.com	
+								git config --global user.name "Joani COUMA"
+								git config --global user.email joani.couma@cgi.com	
 							</code>
 						</pre>
+						<br />🎨
 					</section>
 					<section>
-						Créer un repository
+						Vous prendrez bien un peu de couleurs ?
+						<pre>
+							<code data-trim data-noescape>
+								git config --global color.ui.auto
+							</code>
+						</pre>
+						<br />🎨
+					</section>
+					<section>
+						Créer un repository en local
 						<pre>
 							<code data-trim>
 								git init
 							</code>
 						</pre>
+						<br />🎨
+					</section>
+					<section>
 						<b>Clôner</b> un repository distant
 						<pre>
 							<code data-trim>
-								git clone https://github.com/RoanixS2k12/git-presentation.git
+								git clone https://github.com/StephenNunes/FormationGit
 							</code>
 						</pre>
+						<a href="https://git-scm.com/docs/git-clone">Documentation</a>
+						<br />🎨
 					</section>
 					<section>
 						<h4>Remotes</h4>
@@ -93,54 +196,80 @@
 						<pre>
 							<code data-trim>
 								# Ajouter un remote
-								git remote add remoteName remoteAdress
-								# Lister les remote
+								git remote add {remoteName} {remoteAdress}
+								# Lister les remotes 
 								git remote -v
 								# Supprimer un remote
-								git remote rm remoteName
+								git remote rm {remoteName}
 							</code>
 						</pre>
+						<a href="https://git-scm.com/docs/git-remote">Documentation</a>
+						<br />🎨
 					</section>
 					<section>
-						<h4>Repository status</h4>
-						A chaque modification ajout / suppression le repository <b>local</b> possède un état propre
+						<h4>Statut d'un Repository</h4>
+						A chaque modification ajout / suppression, le repository <b>local</b> possède un état propre
 						<pre>
 							<code data-trim>
 								git status
 							</code>
 						</pre>
+						<br />🎨
 					</section>
 					<section>
 						<h4>Pull</h4>
-						Avant de commencer la modification d'un quelconque fichier il est nécessaire d'être <b>à jour</b>.
+						Avant de commencer la modification d'un quelconque fichier, il est nécessaire d'être <b>à jour</b>.
 						<pre>
 							<code data-trim>
-								git pull remoteName branchName
+								git pull {remoteName} {branchName}
 								git pull origin master
 								git pull # Current branch
 							</code>
 						</pre>
-						Il y a d'autre manière de se mettre à jour.
+						<br />🎨
 					</section>
 					<section>
 						<h4>Indexation 1</h4>
 						Chaque changement (modification, ajout, suppression) d'un fichier doit être indexé par Git.
 						<pre>
 							<code data-trim>
-								git add fileName
+								git add {fileName}
+								# Ajouter tous les fichiers et dossiers avec leurs sous-fichiers et sous-dossiers
 								git add . 
 							</code>
 						</pre>
-						Les fichiers sont alors à l'état <b>staged</b>
+						Les fichiers sont alors à l'état <b>staged</b> dans le <b>Staging area</b>
+						<br />🎨
 					</section>
 					<section>
 						<h4>Indexation 2</h4>
+						Pour la suppression d'un fichier et indéxer cette suppression
+						<pre>
+							<code data-trim>
+								git rm {fileName}
+							</code>
+						</pre>
+						<br />🎨
+					</section>
+					<section>
+						<h4>Indexation 3</h4>
+						Pour déplacer un fichier dans le répertoire de travail
+						<pre>
+							<code data-trim>
+								git mv {currentPath} {newPath}
+							</code>
+						</pre>
+						<br />🎨
+					</section>
+					<section>
+						<h4>Indexation 4</h4>
 						Il est possible de desindexer un fichier 
 						<pre>
 							<code data-trim>
-								git reset HEAD fileName
+								git reset HEAD {fileName}
 							</code>
 						</pre>
+						<br />🎨
 					</section>
 					<section>
 						<h4>Commits 1</h4>
@@ -148,10 +277,11 @@
 						<pre>
 							<code data-trim>
 								git commit 
-								git commit -m 'feat: Initial Commit'
-								git commit -am 'feat: Initial Commit'
+								git commit -m "feat: Initial Commit"
+								git commit -am "feat: Initial Commit"
 							</code>
 						</pre>
+						<br />🎨
 					</section>
 					<section>
 						<h4>Commits 2</h4>
@@ -163,20 +293,30 @@
 								git log --pretty=oneline --abbrev-commit
 							</code>
 						</pre>
+						<br />🎨
+					</section>
+					<section>
+						<h4>Commits 3</h4>
+						Un commit est un état stable de l'application, vérifier que ça compile, ça ne mange pas de pain 😀
+					</section>
+					<section>
+						<h4>Commits 4</h4>
+						Faites des commits, faites en <em>beaucoup</em>, leur description n'en sera que plus véritable si les commit sont des changements atomiques
 					</section>
 					<section>
 						<h4>Push</h4>
-						Une fois que l'on est satisfait des différents commits locaux il est alors temps de les pousser sur le repo distant...
+						Une fois que l'on est satisfait des différents commits locaux, il est alors temps de les pousser sur le repository distant
 						<pre>
 							<code data-trim>
-								git push remoteName branchName
+								git push {remoteName} {branchName}
 								git push origin master
 							</code>
 						</pre>
+						<br />🎨
 					</section>
 					<section>
-						<h4>Bonus: Stash</h4>
-						Lorsque l'on souhaite "mettre de côté" un travail en cours, inachevé
+						<h4>Stash</h4>
+						Lorsque l'on souhaite "mettre de côté" un travail en cours en local, inachevé
 						<pre>
 							<code data-trim>
 								git stash 	# Mets de côté le travail en cours
@@ -184,32 +324,26 @@
 								git stash list 	# List tous les "états sauvegardés"
 							</code>
 						</pre> 
+						<br />🎨
 					</section>
 					<section>
-						<h4>Bonus: Reset</h4>
-						Lorsque nous sommes dans un etat bien trop instable...
+						<h4>Reset</h4>
+						Revenir à l'état de la branche remote
 						<pre>
 							<code data-trim>
-								git reset HEAD origin/branchName
-								git reset --hard origin/branch # Revient à l'état de la branch remote 
+								git reset HEAD {remoteName}/{branchName}
+								git reset HEAD origin/master
+								git reset --hard origin/master
 							</code>
 						</pre>
-					</section>
-					<section>
-						<h4>Bonus: Cherry-pick</h4>
-						Récupère les modifications présente sur un commit exterieur à la branch actuelle, et applique ces modifications
-						<pre>
-							<code>
-								git cherry-pick #sha1 
-							</code>
-						</pre>
+						<br />🎨
 					</section>
 				</section>
-				<!-- MODULE 03: ADVANCED GIT -->
+				<!-- MODULE 03: Advanced Git -->
 				<section>
-					<section>Advanced GIT</section>
+					<section data-background-image="assets/expert.jpg"><h1>Advanced Git</h1></section>
 					<section>
-							"Je suis en train d’implémenter une nouvelle fonctionnalité sur la branche master (qui est la branche par défaut sous GIT). Mon n+1 me demande de corriger un bug urgent sur un précédent commit. Malheureusement, je suis obligé de terminer mes modifications avant de corriger ce bug… "
+							"Je suis en train d’implémenter une nouvelle fonctionnalité sur la branche master (qui est la branche par défaut sous Git). Mon n+1 me demande de corriger un bug urgent sur un précédent commit. Malheureusement, je suis obligé de terminer mes modifications avant de corriger ce bug… "
 					</section>
 					<section>
 						<h4>Branches 1</h4>
@@ -217,26 +351,29 @@
 						<pre>
 							<code data-trim>
 								# New branch
+								git checkout -b {branchName}
 								git checkout -b myFeature
-								# Retourner sur master
+								# Retourner sur la branch master
 								git checkout master
 							</code>
 						</pre>
+						<br />🎨
 					</section>
 					<section>
 						<h4>Branches 2</h4>
-						Chaque projet decidera du nombre de branches / de la manière de gérer ses feature.
+						Chaque projet decidera du nombre de branches / de la manière de gérer ses features, on appelle ça le workflow Git du projet.
 						En général, <b>master</b> correspond aux versions stables de l'application, <b>develop</b> est la version sur laquelle l'équipe travaille. 
 						Chaque <b>feature</b> peut être une branche à part. 
 					</section>
 					<section>
 						<h4>Branches 3</h4>
-						La commande checkout permet également de se <em>déplacer</em> vers une commit (<em>sha1</em>) voir un tag.
+						La commande checkout permet également de se <em>déplacer</em> vers un commit (<em>sha1</em>) voir un tag.
 						<pre>
 							<code data-trim>
-								git checkout 68bdcf9 # Premier commit de cette presentation ..
+								git checkout {hashDeCommit} 
 							</code>
 						</pre> 
+						<br />🎨
 					</section>
 					<section>
 						<h4>Branches 4</h4>
@@ -248,6 +385,7 @@
 								git branch -av
 							</code>
 						</pre>
+						<br />🎨
 					</section>
 					<section>
 						<h4>Branches 5</h4>
@@ -258,32 +396,76 @@
 								git branch -D remoteBranch # --delete --force
 							</code>
 						</pre>
+						<br />🎨
 						Ainsi que du remote 
 						<pre>
 							<code data-trim>
-								git push remote_name --delete branch_name
+								git push {remoteName} --delete {branchName}
 							</code>
 						</pre>
+						<br />🎨
 					</section>
 					<section>
-						<h4>Merge</h4>
-						On peut merger des modifications d'une autre branche sur la branche courrante.
+						<h4>Branches 6</h4>
+						Récupérer en local les branches du remote et les lier aux branches du remote
 						<pre>
 							<code data-trim>
+								git fetch -all
+								git checkout {branchName}
+							</code>
+						</pre>
+						<br />🎨
+					</section>
+					<section>
+						<h4>Merge 1</h4>
+						On peut merger des modifications d'une autre branche sur la branche courante.
+						<pre>
+							<code data-trim>
+								git merge {branchNameWhereModificationsGot}
 								git merge master
 							</code>
 						</pre>
 						Aura pour conséquence de rammener toutes les modifications présente sur <b>master</b> sur la branche courante.
+						<br />🎨
+					</section>
+					<section>
+						<h4>Merge 2</h4>
+						Merge Fast-forward ou no fast-forward<br />
+						Un merge fast-forward est un merge classique comme exécuté auparavant<br />
+						<img data-src="assets/beforeMerge.png" style="height:40%; width:40%;">
+						<img data-src="assets/fastForwardMerge.png" style="height:40%; width:40%;">
+					</section>
+					<section>
+						<h4>Merge 3</h4>
+						Un merge no fast-forward est un merge qui crée un commit de merge, afin de <br />
+						garder l'historique de la branche une fois mergée
+						<img data-src="assets/beforeMerge.png" style="height:30%; width:30%;">
+						<img data-src="assets/noFastForwardMerge.png" style="height:30%; width:30%;">
+					</section>
+					<section>
+						<h4>Merge 4</h4>
+						Merge no fast-forward
+						<pre>
+							<code data-trim>
+								git merge --no-ff {branchNameWhereModificationsGot}
+								git merge --no-ff master
+							</code>
+						</pre>
+						<br />🎨
+					</section>
+					<section>
+						<h4>Merge 5</h4>
+						Je recommande dans la majorité des cas d'utiliser un merge no fast forward pour facilité la compréhension de l'historique
 					</section>
 					<section>
 						<h4>Conflits 1</h4>
-						La plupart du temps, lors d'un <em>merge</em> GIT sait reconnaitre quels sont les fichiers modifiés et permet un <em>auto-merging</em> des fichiers.
-						Dans le cas contraire, l'opération est stoppée le temps que les conflits soit resolus.
+						La plupart du temps, lors d'un <em>merge</em>, Git sait reconnaitre quels sont les fichiers modifiés et permet un <em>auto-merging</em> des fichiers.
+						Dans le cas contraire, l'opération est stoppée le temps que les conflits soient résolus.
 					</section>
 					<section>
 						<h4>Conflits 2</h4>
 						Les fichiers présentant un conflit que Git ne sait pas résoudre automatiquement, sont modifiés par Git et il est <b>impératif</b> de résoudre l'intégralité 
-						des conflits avant de pouvoir continuer.
+						des conflits soi-même avant de pouvoir continuer.
 					</section>
 					<section>
 						<pre>
@@ -301,45 +483,38 @@
 						<b>Attention</b> aux différents outils réalisant des merges conflicts <em>automatiquement.</em> (IntelliJ...)
 					</section>
 					<section>
-						<h4>Rebase</h4>
+						<h4>Conflits 4</h4>
+						<p>Configurer un outil externe de gestion de conflits</p>
+						<pre>
+							<code data-trim>
+						     	git config --global --add merge.tool kdiff3 
+								git config --global --add mergetool.kdiff3.path "C:/Program Files/KDiff3/kdiff3.exe" 
+								git config --global --add mergetool.kdiff3.trustExitCode false 
+							</code>
+						</pre>
+						<br />🎨
 					</section>
 					<section>
-						<h4>Merge !== Rebase</h4> 
+						<h4>Rebase 1</h4>
+						<p>Merge est différent du Rebase. Exemple de Rebase :</p>
+						<img data-src="assets/beforeRebase.png" style="height:40%; width:40%;">
+						<img data-src="assets/afterRebase.png" style="height:40%; width:40%;">
 					</section>
 					<section>
-						<h4>Rebase</h4>
+						<h4>Rebase 2</h4>
 						Il est parfois utile, de ne pas souhaiter de commits de merge superflus lorsque l'on souhaite ramener une feature sur master.
 					</section>
 					<section>
-						<h4>Rebase</h4>
-						On a réalisé une mauvaise manip, et on souhaite <em>littéralement</em> réécrire l'historique de GIT.
+						<h4>Rebase 3</h4>
+						On a réalisé une mauvaise manip, et on souhaite <em>littéralement</em> réécrire l'historique de Git.
 					</section>
 					<section>
-						<h4>Rebase</h4>
-						On souhaite <em>squash</em> les différents commits réalisés sur notre branche de developpement en un seul commit avant de valider la feature. 
+						<h4>Rebase 4</h4>
+						On souhaite <em>squash</em> (compresser) les différents commits réalisés sur notre branche de developpement en un seul commit avant de valider la feature. 
 					</section>
 					<section>
-						<h4>Merge</h4>
-						<img data-src="assets/gitmerge.png">
-						<pre>
-							<code data-trim>
-								git checkout master
-								git merge experiment
-							</code>
-						</pre>
-					</section>
-					<section>
-						<h4>Rebase</h4>
-						<img data-src="assets/gitrebase.png">
-						<pre>
-							<code data-trim>
-								git checkout experiment
-								git rebase master
-							</code>
-						</pre>
-					</section>
-					<section>
-						Ne jamais ( <em>hum...</em> ) rebase des commits qui ont déjà été poussés sur un repo distant.
+						<h4>Rebase 5</h4>
+						Ne jamais rebase des commits qui ont déjà été poussés sur un repo distant.
 						<pre>
 							<code data-trim>
 								# If you know what your doing
@@ -348,37 +523,265 @@
 						</pre>
 					</section>
 					<section>
-						<h4>Recommandation</h4>
-						Un commit est un état stable de l'application, vérifier que ça compile ça mange pas de pain :)
+						<h4>Merge vs Rebase</h4>
+						Rebase permet de ré-écrire l'historique des commit, par conséquent je ne le conseille pas au que dans des cas très particuliers comme le squash de commit d'un feature<br />
+						<b>Préférez le Merge no fast forward</b>pour intégrer le code d'une branche dans une autre en gardant un historique le plus authentique possible
 					</section>
 					<section>
-						<h4>Recommandation</h4>
-						<em>More commits!</em>
-					</section>
-					<section>
-						<h4>Recommandation</h4>
+						<h4>Différences 1</h4>
 						Toujours vérifier ses modifications avec des les commiter.
 						<pre>
 							<code data-trim>
 								git diff
 							</code>
 						</pre>
+						<br />🎨
 					</section>
 					<section>
-						<h4>Recommandation</h4>
-						Merge vs Rebase
+						<h4>Différences 1</h4>
+						<p>Configurer un outil externe de gestion de conflits</p>
+						<pre>
+							<code data-trim>
+								git config --global --add diff.guitool kdiff3 
+								git config --global --add difftool.kdiff3.path "C:/Program Files/KDiff3/kdiff3.exe" 
+								git config --global --add difftool.kdiff3.trustExitCode false
+							</code>
+						</pre>
+						<br />🎨
+					</section>
+					<section>
+						<h4>Cherry-pick</h4>
+						Récupère les modifications présente sur un commit d'une autre brancheà la branch actuelle, et applique ces modifications
+						<pre>
+							<code>
+								git cherry-pick {sha1} 
+							</code>
+						</pre>
+						<br />🎨
 					</section>
 				</section>
-				<!-- MODULE 04: GIT FLOW -->
+                <!-- MODULE 04: Workflows Git -->
 				<section>
-					<section>GIT FLOW</section>
+					<section data-background-image="assets/gitFlow.png" data-background-size="60%">
+						<h1>Git Flow</h1>
+					</section>
+					<section>
+						<h4>Sources</h4>
+						<a href="https://nvie.com/posts/a-successful-git-branching-model/">Git flow documentation</a><br />
+						<a href="https://danielkummer.github.io/git-flow-cheatsheet/">Git flow cheat sheet</a>
+					</section>
+					<section>
+						<h4>Git Flow 1</h4>
+						Afin de garder une certaines cohérence dans le nom des branches pour s'y retrouver il faut définir un workflow de branches
+					</section>
+					<section>
+						<h4>Git Flow 2</h4>
+						Workflow Git le plus utilisé et qui convient à la plupart des besoins : Git Flow
+					</section>
+					<section>
+						<h4>Types de branches dans Git flow 1</h4>
+                        <ul>
+                          <li><b>master</b> : Branche principale unique, contient une version stable et publiée de l'application</li>
+                          <li><b>develop</b> : Branche unique source de toutes les nouvelles fonctionnalités</li>
+                        </ul>
+					</section>
+					<section>
+						<h4>Types de branches dans Git flow 2</h4>
+                        <ul>
+                          <li><b>feature/</b> : Branches créées pour chaque nouvelle fonctionnalité ayant pour source la branche <b>develop</b> ou d'autres branches <b>feature/</b> au besoin</li>
+                          <li><b>release/</b> : Branches créées pour la réalisation de tests de validation et donc de correction de bugs exclusivement après développements de fonctionnalités et avant de publier une version fixé de l'application. A pour source la branch <b>develop</b> et pour destination la branche <b>master</b></li>
+                        </ul>
+					</section>
+					<section>
+						<h4>Types de branches dans Git flow 3</h4>
+                        <ul>
+                          <li><b>hotfix/</b> : Branches créées pour la réalisation de correction de bug sur des version déjà publiées (c'est-à-dire en production). A pour source la branche <b>master</b> et pour destination la branche <b>master</b></li>
+                          <li>(Facultative) <b>support/</b> : Branches utilisées uniquement s'il faut gérer plusieurs versions sur plusieurs instances de production. A pour source la branche <b>master</b> et pas de destination. Les branches <b>hotfix/</b> prennent leur source des branches <b>support/</b>/</li>
+                        </ul>
+					</section>
+					<section>
+						<img data-src="assets/gitFlow2.png" style="height:45%; width:45%;">
+					</section>
+					<section>
+						<h4>Exemple de branches Git flow</h4>
+                        <ul>
+                          <li>feature/Policies</li>
+                          <li>release/4.0.2.3</li>
+                          <li>hotfix/WebScreen</li>
+                        </ul>
+					</section>
+					<section>
+						<h4>Manipulation de Git Flow 1</h4>
+                        Git flow est-il installé ?
+						<pre>
+							<code data-trim>
+								git flow
+							</code>
+						</pre>
+						<img data-src="assets/gitFlowCommand.png" style="height:50%; width:50%;">
+						<br />🎨
+					</section>
+					<section>
+						<h4>Manipulation de Git Flow 2</h4>
+                        Documentation
+						<pre>
+							<code data-trim>
+								git flow help
+								git flow {branchName} help
+								git flow feature help
+								git flow feature start --help
+							</code>
+						</pre>
+						<br />🎨
+					</section>
+					<section>
+						<h4>Manipulation de Git Flow 3</h4>
+						Initié un projet Git Flow
+						<pre>
+							<code data-trim>
+								git init 
+							</code>
+						</pre>
+						Crée la branche <b>master</b> et <b>develop</b>
+						<br />🎨
+					</section>
+					<section>
+						<h4>Manipulation de Git Flow 4</h4>
+						Création d'une branch feature/
+						<pre>
+							<code data-trim>
+								git flow feature start {branchName}
+								git flow feature start "screenEC784"
+							</code>
+						</pre>
+						Crée la branche <b>feature/screenEC784</b> depuis la branche <b>develop</b>
+						<br />🎨
+					</section>
+					<section>
+						<h4>Manipulation de Git Flow 5</h4>
+						Création d'une branch feature/ à partir d'une autre branche feature/
+						<pre>
+							<code data-trim>
+								git flow feature start {branchNameToCreate} {branchNameSource}
+								git flow feature start "testWebApi" "feature/screenEC784"
+							</code>
+						</pre>
+						Crée la branche <b>feature/testWebApi</b> depuis la branche <b>feature/screenEC784</b>
+						<br />🎨
+					</section>
+					<section>
+						<h4>Manipulation de Git Flow 6</h4>
+						Terminer une branche feature/ et la merger dans la branche develop ou la branche feature/ source
+						<pre>
+							<code data-trim>
+								git flow feature finish --no-ff {branchName}
+								git flow feature finish --no-ff "databaseConnection"
+							</code>
+						</pre>
+						L'option --no-ff permet ici de faire un merge no fast-forward, donc de créer un commit de merge
+						Merge la branche <b>feature/databaseConnection</b> dans <b>develop</b> et supprime la branche <b>feature/databaseConnection</b>
+						<br />🎨
+					</section>
+					<section>
+						<h4>Manipulation de Git Flow 6</h4>
+						Terminer une branche feature/ en spécifiant ou la merger
+						<pre>
+							<code data-trim>
+								git flow feature finish --no-ff {branchNameToFinish} {sourceBranchName}
+								git flow feature finish --no-ff "testWebApi" "feature/screenEC784"
+							</code>
+						</pre>
+						L'option --no-ff permet ici de faire un merge no fast-forward, donc de créer un commit de merge.<br />
+						Merge la branche <b>feature/databaseConnection</b> dans <b>develop</b> et supprime la branche <b>feature/databaseConnection</b>
+						<br />🎨
+					</section>
+					<section>
+						<h4>Manipulation de Git Flow 7</h4>
+						Création d'une branch release/ depuis develop
+						<pre>
+							<code data-trim>
+								git flow release start {branchName}
+								git flow release start "6.12.0.0"
+							</code>
+						</pre>
+						Crée la branche <b>release/6.12.0.0</b> depuis la branche <b>develop</b>
+						<br />🎨
+					</section>
+					<section>
+						<h4>Manipulation de Git Flow 7</h4>
+						Création d'une branch release/ depuis un commit spécifique de la branche develop
+						<pre>
+							<code data-trim>
+								git flow release start {branchName} {commitHash}
+								git flow release start "9.5.0.0" "3s2fdqs"
+							</code>
+						</pre>
+						Crée la branche <b>release/6.12.0.0</b> depuis le commit <b>3s2fdqs</b> de la branche <b>develop</b>
+						<br />🎨
+					</section>
+					<section>
+						<h4>Manipulation de Git Flow 8</h4>
+						Terminer une branch release/ 
+						<pre>
+							<code data-trim>
+								git flow release finish {branchName}
+								git flow release finish "9.5.0.0"
+							</code>
+						</pre>
+						Merge la branche <b>release/9.5.0.0</b> dans la branche <b>master</b> et dans la branche <b>develop</b> et supprime la branche <b>release/9.5.0.0</b>
+						<br />🎨
+					</section>
+					<section>
+						<h4>Manipulation de Git Flow 9</h4>
+						Création de branche support/
+						<pre>
+							<code data-trim>
+								git flow support start {branchName} {sourceBranchName}
+								git flow support start "6.2" "master"
+							</code>
+						</pre>
+						Crée la branche <b>support/6.2</b> depuis la branche <b>master</b>
+						<br />🎨
+					</section>
+					<section>
+						<h4>Manipulation de Git Flow 10</h4>
+						Création de branche hotfix/ depuis une branche support/
+						<pre>
+							<code data-trim>
+								git flow hotfix start {branchName} {sourceBranchName}
+								git flow hotfix start "bugWebScreen" "support/6.2"
+							</code>
+						</pre>
+						Crée la branche <b>hotfix/bugWebScreen</b> depuis la branche <b>support/6.2</b>
+						<br />🎨
+					</section>
+					<section>
+						<h4>Manipulation de Git Flow 10</h4>
+						Terminer et merger une branche hotfix/ dans sa branche support/ source
+						<pre>
+							<code data-trim>
+								git flow hotfix finish {branchName} -T {tagHotFixsourceBranchName}
+								git flow hotfix finish "bugWebScreen" -T "6.2.0.1"
+							</code>
+						</pre>
+						Merge la branche <b>hotfix/bugWebScreen</b> dans la branche <b>support/6.2</b> avec le tag 6.2.0.1
+						La branche <b>hotfix/bugWebScreen</b> est supprimée
+						Ici l'option --no-ff n'est pas nécessaire car le merge d'une branche hotfix/ sera no fast forward par défaut
+						<br />🎨
+					</section>
+					<section>
+						<h4>Git Flow</h4>
+						Git flow permet de définir une structure de branches et de s'abtraire des commandes de merge/rebase.<br />
+						Cela facilite l'utilisation de Git.
+					</section>
 				</section>
-				<!-- MODULE 05: REX -->
+				<!-- MODULE 05: Pull / Merge requests -->
 				<section>
-					<section>REX</section>
+					<section>Pull / Merge request</section>
 				</section>
 			</div>
-		</div>
+				<section>
+        </div>
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
