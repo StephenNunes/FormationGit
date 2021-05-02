@@ -58,6 +58,10 @@
                         <a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a><br/>
 						🎨
 					</section>
+					<section>
+						Création d'un compte sur github.com
+                        <a href="https://github.com">https://github.com</a><br/>
+					</section>
                     <section>
                         Clients graphiques :
                         <a href=" https://git-scm.com/downloads/guis">https://git-scm.com/downloads/guis</a><br/>
@@ -82,9 +86,9 @@
 					<section>
 						<h4>Decentralisé</h4>
 						<p>Un dépôt local Git contient une <b>copie complète du repository distant</b> dans le dossier caché .git.
-                        C'est à dire, qu'en local, il est contenu les fichiers et dossier et tout l'historique des changements fait sur ceux-ci​</p>
+                        C'est à dire, qu'en local, il est contenu les fichiers et dossiers et tout l'historique des changements fait sur ceux-ci​</p>
                         
-						<p>Un dépôt local SVN ne contient que <b>les méta datas des fichiers</b>, le reste est stocké sur le serveur distant.​</p>
+						<p>Un dépôt local SVN ne contient que <b>les métadatas des fichiers</b>, le reste est stocké sur le serveur distant.​</p>
 					</section>
                     <section>
                         <h4>Centralisé (SVN, TFVC, etc)</h4>
@@ -116,7 +120,7 @@
 					</section>
 					<section>
                         <ul>
-                          <li><b>Répertoire de travail</b> : Où se trouve vos fichiers/dossier de code, documentation</li>
+                          <li><b>Répertoire de travail</b> : Où se trouve vos fichiers/dossiers de code, documentation</li>
                           <li><b>Zone de transit</b> : Où se trouve les fichiers que vous vous apprétez à commit</li>
                           <li><b>Dépôt local</b> : L'historique de chaque changements (commit)</li>
                         </ul>
@@ -158,6 +162,24 @@
 				<section>
 					<section data-background-image="assets/lego.jpg"><h1>Git basics</h1></section>
                     <section>
+						<h4>La documentation 1</h4>
+						<pre>
+							<code data-trim data-noescape>
+								git help
+								git {command} --help
+								git config --help
+							</code>
+						</pre>
+						<br />🎨
+					</section>
+                    <section>
+						<h4>La documentation 2</h4>
+						<p>
+							<a href="https://git-scm.com/docs/">Documentation (Anglaise)</a><br />
+							<a href="https://www.atlassian.com/fr/git/tutorials/setting-up-a-repository">Documentation (Française)</a>
+						</p>
+					</section>
+                    <section>
 						La liste des configurations actuelles
 						<pre>
 							<code data-trim data-noescape>
@@ -186,7 +208,7 @@
 						<br />🎨
 					</section>
 					<section>
-						<b>Clôner</b> un repository distant 1
+						<h4>Configurer Git 1</h4>
 						<pre>
 							<code data-trim>
                                 git config --global http.sslVerify false
@@ -195,9 +217,8 @@
 						<br />🎨
 					</section>
 					<section>
-						<b>Clôner</b> un repository distant 2
+						<h4>Configurer Git 2</h4>
 						<pre>
-							Clés ssh existantes ?
 							<code data-trim>
 								ls -al ~/.ssh
 							</code>
@@ -205,32 +226,28 @@
 						<br />🎨
 					</section>
                     <section>
-						<b>Clôner</b> un repository distant 3
+						<h4>Configurer Git 3</h4>
 						<pre>
 							<code data-trim>
 								ssh-keygen -t rsa -b 4096 -C "stephen.nunes@cgi.com"
-								cat ~/.ssh/id_rsa.pub
-							</code>
-						</pre>
-						<br />🎨
-					</section>
-					<section>
-						<b>Clôner</b> un repository distant 4
-						<pre>
-							<code data-trim>
-                                cd ../
-                                mkdir testClone
-								git clone https://github.com/StephenNunes/FormationGit
 							</code>
 						</pre>
 						<br />🎨
 					</section>
                     <section>
-						<b>Clôner</b> un repository distant 4
+						<h4>Configurer Git 4</h4>
 						<pre>
 							<code data-trim>
-                                cd ../
-                                mkdir testClone
+                                cat ~/.ssh/id_rsa.pub
+							</code>
+						</pre>
+						<p>Settins -> SSH and GPG keys</p>
+						<br />🎨
+					</section>
+                    <section>
+						<b>Clôner</b> un repository distant
+						<pre>
+							<code data-trim>
 								git clone https://github.com/StephenNunes/FormationGit
 							</code>
 						</pre>
@@ -240,7 +257,10 @@
 						Créer un repository en local
 						<pre>
 							<code data-trim>
+								mkdir test
+								cd test
 								git init
+								git init --help
 							</code>
 						</pre>
 						<br />🎨
@@ -255,16 +275,10 @@
 						<br />🎨
 					</section>
 					<section>
-						<h4>Remotes</h4>
-						Pour collaborer avec notre équipe nous avons besoin d’un <b>référentiel commun</b> sur lequel partager nos ressources. Un <b>remote</b>.
+						Création d'un fichier README.md
 						<pre>
 							<code data-trim>
-								# Ajouter un remote
-								git remote add {remoteName} {remoteAdress}
-								# Lister les remotes 
-								git remote -v
-								# Supprimer un remote
-								git remote rm {remoteName}
+								touch README.md
 							</code>
 						</pre>
 						<br />🎨
@@ -280,23 +294,12 @@
 						<br />🎨
 					</section>
 					<section>
-						<h4>Pull</h4>
-						Avant de commencer la modification d'un quelconque fichier, il est nécessaire d'être <b>à jour</b>.
-						<pre>
-							<code data-trim>
-								git pull {remoteName} {branchName}
-								git pull origin master
-								git pull # Current branch
-							</code>
-						</pre>
-						<br />🎨
-					</section>
-					<section>
 						<h4>Indexation 1</h4>
 						Chaque changement (modification, ajout, suppression) d'un fichier doit être indexé par Git.
 						<pre>
 							<code data-trim>
 								git add {fileName}
+								git add README.md
 								# Ajouter tous les fichiers et dossiers avec leurs sous-fichiers et sous-dossiers
 								git add . 
 							</code>
@@ -309,17 +312,25 @@
 						Pour la suppression d'un fichier et indéxer cette suppression
 						<pre>
 							<code data-trim>
-								git rm {fileName}
+								git rm -qf {fileName}
+								git rm -qf README.md
+								git status
 							</code>
 						</pre>
 						<br />🎨
 					</section>
 					<section>
 						<h4>Indexation 3</h4>
-						Pour déplacer un fichier dans le répertoire de travail
+						Pour déplacer un fichier du staging area
 						<pre>
 							<code data-trim>
 								git mv {currentPath} {newPath}
+
+								touch test1.txt
+								mkdir newFolder
+								git add test1.txt
+								git mv ./test1.txt newFolder/test1.txt
+								git status
 							</code>
 						</pre>
 						<br />🎨
@@ -329,19 +340,20 @@
 						Il est possible de desindexer un fichier 
 						<pre>
 							<code data-trim>
-								git reset HEAD {fileName}
+								git reset {fileName}
+								git reset newfolder/test1.txt
 							</code>
 						</pre>
 						<br />🎨
 					</section>
 					<section>
 						<h4>Commits 1</h4>
-						Une fois les modification staged, il est possible de les commit. Le repository <b>local</b> est alors modifié.
+						Une fois les modifications staged, il est possible de les commit. Le repository <b>local</b> est alors modifié.
 						<pre>
 							<code data-trim>
-								git commit 
+								git commit
+								# Vi est ouvert dans la console, "i" pour écrire, ":wq" pour sauvegarder et quitter 
 								git commit -m "feat: Initial Commit"
-								git commit -am "feat: Initial Commit"
 							</code>
 						</pre>
 						<br />🎨
@@ -367,12 +379,49 @@
 						Faites des commits, faites en <em>beaucoup</em>, leur description n'en sera que plus véritable si les commit sont des changements atomiques
 					</section>
 					<section>
+						<h4>Remotes 1</h4>
+						<p>
+                            Pour collaborer avec notre équipe nous avons besoin d’un <b>référentiel commun</b> sur lequel partager nos ressources.
+                            Un <b>remote</b>.<br/><br/>
+							Création d'un repository sur Github pour faire office de dépôt remote
+						</p>
+						<br />🎨
+					</section>
+					<section>
+						<h4>Remotes 2</h4>
+						<pre>
+							<code data-trim>
+								# Ajouter un remote
+								git remote add {remoteName} {remoteAdress}
+								# Lister les remotes 
+								git remote -v
+								# Supprimer un remote
+								git remote rm {remoteName}
+
+								git remote add origin https://github.com/StephenNunes/test.git
+							</code>
+						</pre>
+						<br />🎨
+					</section>
+					<section>
 						<h4>Push</h4>
 						Une fois que l'on est satisfait des différents commits locaux, il est alors temps de les pousser sur le repository distant
 						<pre>
 							<code data-trim>
 								git push {remoteName} {branchName}
 								git push origin master
+							</code>
+						</pre>
+						<br />🎨
+					</section>
+					<section>
+						<h4>Pull</h4>
+						Pour récupérer et merger un repôt distant
+						<pre>
+							<code data-trim>
+								git pull {remoteName} {branchName}
+								git pull origin master
+								git pull # Current branch
 							</code>
 						</pre>
 						<br />🎨
@@ -400,11 +449,6 @@
 							</code>
 						</pre>
 						<br />🎨
-					</section>
-					<section>
-						<h4>Documentation</h4>
-						<a href="https://git-scm.com/docs/">Documentation (Anglaise)</a><br />
-						<a href="https://www.atlassian.com/fr/git/tutorials/setting-up-a-repository">Documentation (Française)</a>
 					</section>
 				</section>
 				<!-- MODULE 03: Advanced Git -->
@@ -448,8 +492,11 @@
 						Pour obtenir la liste des différentes branches du repository local / distant et les différences
 						<pre>
 							<code data-trim>
+								# Liste des branches locales
 								git branch
+								# Liste des branches locales avec HEAD commit
 								git branch -vv
+								# Liste des branches locales et remote avec HEAD commit
 								git branch -av
 							</code>
 						</pre>
@@ -457,18 +504,13 @@
 					</section>
 					<section>
 						<h4>Branches 5</h4>
-						Pour supprimer une branche du repository local, du remote ou les 2.
+						Pour supprimer une branche du repository local
 						<pre>
 							<code data-trim>
-								git branch -d localBranch # --delete
-								git branch -D remoteBranch # --delete --force
-							</code>
-						</pre>
-						<br />🎨
-						Ainsi que du remote 
-						<pre>
-							<code data-trim>
-								git push {remoteName} --delete {branchName}
+								git branch -d {branchName}
+								git checkout master
+								git branch -d myFeature
+								# Il faut être sur une autre branch que la branche actuelle
 							</code>
 						</pre>
 						<br />🎨
@@ -524,6 +566,7 @@
 					<section>
 						<h4>Merge 5</h4>
 						Je recommande dans la majorité des cas d'utiliser un merge no fast forward pour facilité la compréhension de l'historique
+						Sur Git bash, le merge no fast-foward est configuré par défaut
 					</section>
 					<section>
 						<h4>Conflits 1</h4>
@@ -585,7 +628,6 @@
 						Ne jamais rebase des commits qui ont déjà été poussés sur un repo distant.
 						<pre>
 							<code data-trim>
-								# If you know what your doing
 								git push -f 
 							</code>
 						</pre>
@@ -607,7 +649,7 @@
 					</section>
 					<section>
 						<h4>Différences 1</h4>
-						<p>Configurer un outil externe de gestion de conflits</p>
+						<p>Configurer un outil externe de comparaison de fichiers</p>
 						<pre>
 							<code data-trim>
 								git config --global --add diff.guitool kdiff3 
@@ -625,6 +667,34 @@
 								git cherry-pick {sha1} 
 							</code>
 						</pre>
+						<br />🎨
+					</section>
+					<section>
+						<h4>Blame 1</h4>
+						Connaître qui a modifié chaque ligne dans un fichier
+						<pre>
+							<code data-trim>
+								mkdir blameTest
+								cd blameTest/
+								git clone https://kevzettler@bitbucket.org/kevzettler/git-blame-example.git
+							</code>
+						</pre>
+						<br />🎨
+					</section>
+					<section>
+						<h4>Blame 2</h4>
+						Blame ne fonctionne que sur les fichiers
+						<pre>
+							<code data-trim>
+								git blame README.md
+							</code>
+						</pre>
+						<br />🎨
+					</section>
+					<section>
+						<h4>.gitignore</h4>
+						Ignorer des fichiers pour ne pas les stage/commit dans votre dépôt<br />
+						<a href="https://www.toptal.com/developers/gitignore/">Création de fichiers .gitignore</a><br />
 						<br />🎨
 					</section>
 				</section>
@@ -707,7 +777,7 @@
 						Initié un projet Git Flow
 						<pre>
 							<code data-trim>
-								git init 
+								git flow init 
 							</code>
 						</pre>
 						Crée la branche <b>master</b> et <b>develop</b>
@@ -740,6 +810,7 @@
 					<section>
 						<h4>Manipulation de Git Flow 6</h4>
 						Terminer une branche feature/ et la merger dans la branche develop ou la branche feature/ source
+						L'option --no-ff permet de faire un merge no fast-forward
 						<pre>
 							<code data-trim>
 								git flow feature finish --no-ff {branchName}
@@ -780,8 +851,8 @@
 						Création d'une branch release/ depuis un commit spécifique de la branche develop
 						<pre>
 							<code data-trim>
-								git flow release start {branchName} {commitHash}
-								git flow release start "9.5.0.0" "3s2fdqs"
+								git flow release start {branchName}
+								git flow release start "9.5.0.0"
 							</code>
 						</pre>
 						Crée la branche <b>release/6.12.0.0</b> depuis le commit <b>3s2fdqs</b> de la branche <b>develop</b>
@@ -796,7 +867,9 @@
 								git flow release finish "9.5.0.0"
 							</code>
 						</pre>
-						Merge la branche <b>release/9.5.0.0</b> dans la branche <b>master</b> et dans la branche <b>develop</b> et supprime la branche <b>release/9.5.0.0</b>
+						Merge la branche <b>release/9.5.0.0</b> dans la branche <b>master</b> et dans la branche <b>develop</b><br/>
+						et supprime la branche <b>release/9.5.0.0</b><br/>
+						Cela ouvre Vi et demande un tag
 						<br />🎨
 					</section>
 					<section>
@@ -806,6 +879,7 @@
 							<code data-trim>
 								git flow support start {branchName} {sourceBranchName}
 								git flow support start "6.2" "master"
+								{sourceBranchName} est obligatoire
 							</code>
 						</pre>
 						Crée la branche <b>support/6.2</b> depuis la branche <b>master</b>
@@ -842,10 +916,6 @@
 						Git flow permet de définir une structure de branches et de s'abtraire des commandes de merge/rebase.<br />
 						Cela facilite l'utilisation de Git.
 					</section>
-				</section>
-				<!-- MODULE 05: Pull / Merge requests -->
-				<section>
-					<section>Pull / Merge request</section>
 				</section>
 			</div>
 				<section>
