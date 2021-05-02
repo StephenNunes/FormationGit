@@ -44,7 +44,6 @@
 					</section>
 					<section>
 						🎨 : Manipulation à faire<br />
-						🎤 : A vous la parole
 					</section>
 				</section>
                 <!-- MODULE 02: Installation -->
@@ -53,9 +52,15 @@
 						<h1>Installation</h1><br />
                     </section>
                     <section>
-                        Téléchargement de Git<br />
+                        Sur PC Michelin<br />
+                        Git sur Centre logiciel<br /><br />
+                        Sinon : Téléchargement de Git<br />
                         <a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a><br/>
 						🎨
+					</section>
+                    <section>
+                        Clients graphiques :
+                        <a href=" https://git-scm.com/downloads/guis">https://git-scm.com/downloads/guis</a><br/>
 					</section>
 				</section>
                 <!-- MODULE 03: Introduction -->       
@@ -152,12 +157,21 @@
 				<!-- MODULE 04: Basic Git  -->
 				<section>
 					<section data-background-image="assets/lego.jpg"><h1>Git basics</h1></section>
+                    <section>
+						La liste des configurations actuelles
+						<pre>
+							<code data-trim data-noescape>
+								git config -l
+							</code>
+						</pre>
+						<br />🎨
+					</section>
 					<section>
 						Identifier l'auteur de chaque modification du repository
 						<pre>
 							<code data-trim data-noescape>
-								git config --global user.name "Joani COUMA"
-								git config --global user.email joani.couma@cgi.com	
+								git config --global user.name "Stephen NUNES"
+								git config --global user.email stephen.nunes@cgi.com	
 							</code>
 						</pre>
 						<br />🎨
@@ -172,6 +186,57 @@
 						<br />🎨
 					</section>
 					<section>
+						<b>Clôner</b> un repository distant 1
+						<pre>
+							<code data-trim>
+                                git config --global http.sslVerify false
+							</code>
+						</pre>
+						<br />🎨
+					</section>
+					<section>
+						<b>Clôner</b> un repository distant 2
+						<pre>
+							Clés ssh existantes ?
+							<code data-trim>
+								ls -al ~/.ssh
+							</code>
+						</pre>
+						<br />🎨
+					</section>
+                    <section>
+						<b>Clôner</b> un repository distant 3
+						<pre>
+							<code data-trim>
+								ssh-keygen -t rsa -b 4096 -C "stephen.nunes@cgi.com"
+								cat ~/.ssh/id_rsa.pub
+							</code>
+						</pre>
+						<br />🎨
+					</section>
+					<section>
+						<b>Clôner</b> un repository distant 4
+						<pre>
+							<code data-trim>
+                                cd ../
+                                mkdir testClone
+								git clone https://github.com/StephenNunes/FormationGit
+							</code>
+						</pre>
+						<br />🎨
+					</section>
+                    <section>
+						<b>Clôner</b> un repository distant 4
+						<pre>
+							<code data-trim>
+                                cd ../
+                                mkdir testClone
+								git clone https://github.com/StephenNunes/FormationGit
+							</code>
+						</pre>
+						<br />🎨
+					</section>
+					<section>
 						Créer un repository en local
 						<pre>
 							<code data-trim>
@@ -180,11 +245,11 @@
 						</pre>
 						<br />🎨
 					</section>
-					<section>
-						<b>Clôner</b> un repository distant
+                    <section>
+						Pour annuler/supprimer le repository créé
 						<pre>
 							<code data-trim>
-								git clone https://github.com/StephenNunes/FormationGit
+								rm -R .git/
 							</code>
 						</pre>
 						<br />🎨
@@ -428,7 +493,7 @@
 								git merge master
 							</code>
 						</pre>
-						Aura pour conséquence de rammener toutes les modifications présente sur <b>master</b> sur la branche courante.
+						Aura pour conséquence de ramener toutes les modifications présente sur <b>master</b> sur la branche courante.
 						<br />🎨
 					</section>
 					<section>
