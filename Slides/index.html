@@ -241,7 +241,7 @@
                                 cat ~/.ssh/id_rsa.pub
 							</code>
 						</pre>
-						<p>Settins -> SSH and GPG keys</p>
+						<p>Settings -> SSH and GPG keys</p>
 						<br />🎨
 					</section>
                     <section>
@@ -302,6 +302,7 @@
 								git add README.md
 								# Ajouter tous les fichiers et dossiers avec leurs sous-fichiers et sous-dossiers
 								git add . 
+								git status
 							</code>
 						</pre>
 						Les fichiers sont alors à l'état <b>staged</b> dans le <b>Staging area</b>
@@ -341,7 +342,7 @@
 						<pre>
 							<code data-trim>
 								git reset {fileName}
-								git reset newfolder/test1.txt
+								git reset newFolder/test1.txt
 							</code>
 						</pre>
 						<br />🎨
@@ -598,7 +599,7 @@
 						<p>Configurer un outil externe de gestion de conflits</p>
 						<pre>
 							<code data-trim>
-						     	git config --global --add merge.tool kdiff3 
+								git config --global --add merge.tool kdiff3 
 								git config --global --add mergetool.kdiff3.path "C:/Program Files/KDiff3/kdiff3.exe" 
 								git config --global --add mergetool.kdiff3.trustExitCode false 
 							</code>
@@ -639,10 +640,12 @@
 					</section>
 					<section>
 						<h4>Différences 1</h4>
-						Toujours vérifier ses modifications avec des les commiter.
+						Toujours vérifier ses modifications avant de les commiter.
 						<pre>
 							<code data-trim>
 								git diff
+								git diff {branch1}..{branch2}
+								git diff myFeature..master
 							</code>
 						</pre>
 						<br />🎨
@@ -661,7 +664,7 @@
 					</section>
 					<section>
 						<h4>Cherry-pick</h4>
-						Récupère les modifications présente sur un commit d'une autre brancheà la branch actuelle, et applique ces modifications
+						Récupère les modifications présentes sur un commit d'une autre branche sur la branch actuelle, et applique ces modifications
 						<pre>
 							<code data-trim>
 								git cherry-pick {sha1} 
@@ -733,8 +736,14 @@
 					<section>
 						<h4>Types de branches dans Git flow 3</h4>
                         <ul>
-                          <li><b>hotfix/</b> : Branches créées pour la réalisation de correction de bug sur des version déjà publiées (c'est-à-dire en production). A pour source la branche <b>master</b> et pour destination la branche <b>master</b></li>
+                          <li><b>hotfix/</b> : Branches créées pour la réalisation de correction de bug sur des versions déjà publiées (c'est-à-dire en production). A pour source la branche <b>master</b> et pour destination la branche <b>master</b></li>
                           <li>(Facultative) <b>support/</b> : Branches utilisées uniquement s'il faut gérer plusieurs versions sur plusieurs instances de production. A pour source la branche <b>master</b> et pas de destination. Les branches <b>hotfix/</b> prennent leur source des branches <b>support/</b>/</li>
+                        </ul>
+					</section>
+					<section>
+						<h4>Types de branches dans Git flow 4</h4>
+                        <ul>
+                          <li><b>bugfix/</b> : Branches créées pour la réalisation de correction de bug sur des versions qui sont en train d'être validées (branche release/)
                         </ul>
 					</section>
 					<section>
@@ -777,10 +786,12 @@
 						Initié un projet Git Flow
 						<pre>
 							<code data-trim>
+								git checkout master
+								git checkout -b develop
 								git flow init 
 							</code>
 						</pre>
-						Crée la branche <b>master</b> et <b>develop</b>
+						Créer la branche <b>master</b> et <b>develop</b>, puis initier git flow
 						<br />🎨
 					</section>
 					<section>
@@ -809,7 +820,7 @@
 					</section>
 					<section>
 						<h4>Manipulation de Git Flow 6</h4>
-						Terminer une branche feature/ et la merger dans la branche develop ou la branche feature/ source
+						Terminer une branche feature/ et la merger dans la branche develop ou la branche feature/ source<br />
 						L'option --no-ff permet de faire un merge no fast-forward
 						<pre>
 							<code data-trim>
@@ -817,7 +828,7 @@
 								git flow feature finish --no-ff "databaseConnection"
 							</code>
 						</pre>
-						L'option --no-ff permet ici de faire un merge no fast-forward, donc de créer un commit de merge
+						L'option --no-ff permet ici de faire un merge no fast-forward, donc de créer un commit de merge<br />
 						Merge la branche <b>feature/databaseConnection</b> dans <b>develop</b> et supprime la branche <b>feature/databaseConnection</b>
 						<br />🎨
 					</section>
@@ -844,18 +855,6 @@
 							</code>
 						</pre>
 						Crée la branche <b>release/6.12.0.0</b> depuis la branche <b>develop</b>
-						<br />🎨
-					</section>
-					<section>
-						<h4>Manipulation de Git Flow 7</h4>
-						Création d'une branch release/ depuis un commit spécifique de la branche develop
-						<pre>
-							<code data-trim>
-								git flow release start {branchName}
-								git flow release start "9.5.0.0"
-							</code>
-						</pre>
-						Crée la branche <b>release/6.12.0.0</b> depuis le commit <b>3s2fdqs</b> de la branche <b>develop</b>
 						<br />🎨
 					</section>
 					<section>
@@ -898,7 +897,7 @@
 						<br />🎨
 					</section>
 					<section>
-						<h4>Manipulation de Git Flow 10</h4>
+						<h4>Manipulation de Git Flow 11</h4>
 						Terminer et merger une branche hotfix/ dans sa branche support/ source
 						<pre>
 							<code data-trim>
