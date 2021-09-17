@@ -210,7 +210,7 @@ Reveal.initialize({
 	defaultTiming: 120,
 
 	// Display the page number of the current slide
-	slideNumber: false,
+	slideNumber: true,
 
 	// Push each slide change to the browser history
 	history: false,

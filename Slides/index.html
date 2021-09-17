@@ -39,7 +39,7 @@
 					<section>
 						<h4>A propos de moi</h4>
 						Stephen Nunes<br />
-						Expert technique Junior - CGI - 5 ans<br />
+						Expert technique Junior - CGI - 6 ans<br />
 						stephen.nunes@cgi.com
 					</section>
 					<section>
@@ -47,119 +47,130 @@
 					</section>
 				</section>
                 <!-- MODULE 02: Installation -->
-				<section>
-					<section data-background-image="assets/macon.jpg" >
-						<h1>Installation</h1><br />
-                    </section>
-                    <section>
-                        Sur PC Michelin<br />
-                        Git sur Centre logiciel<br /><br />
-                        Sinon : Téléchargement de Git<br />
-                        <a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a><br/>
-						🎨
-					</section>
-					<section>
-						Création d'un compte sur github.com
-                        <a href="https://github.com">https://github.com</a><br/>
-					</section>
-                    <section>
-                        Clients graphiques :
-                        <a href=" https://git-scm.com/downloads/guis">https://git-scm.com/downloads/guis</a><br/>
-					</section>
-				</section>
+		<section>
+			<section data-background-image="assets/macon.jpg" >
+				<h1>Installation</h1><br />
+                    	</section>
+                    	<section>
+                        	Sur PC Michelin<br />
+                        	Git sur Centre logiciel (Peut mettre du temps à s'actualiser)<br />
+				<img data-src="assets/gitCentreLogiciel.png" style="height:70%; width:70%;"><br />
+                        	Sinon : Téléchargement de Git<br />
+                        	<a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a>
+				<br/>🎨
+			</section>
+			<section>
+				Création d'un compte sur github.com
+                        	<a href="https://github.com">https://github.com</a>
+				<img data-src="assets/githubSignUp.png" style="height:70%; width:70%;">
+				<br/>🎨
+			</section>
+			<section>
+				Création du Personal Access Token sur github.com<br/>
+				Settings -> Developer settings -> Personal access tokens -> Generate new token -> Check all -> Generate token<br/>
+				<img data-src="assets/githubPat.png" style="height:70%; width:70%;">
+				Le Personal Access Token sera à utiliser à la place de votre mot de passe lors du 'push'
+				<br/>🎨
+			</section>
+     	                <section>
+       	                	Présentation de clients graphiques :
+                        	<a href=" https://git-scm.com/downloads/guis">https://git-scm.com/downloads/guis</a><br/>
+			</section>
+		</section>
                 <!-- MODULE 03: Introduction -->       
                 <section>
-                    <section data-background-image="assets/start.webp" >
-                        <h1>Introduction</h1>
-                    </section>
-					<section>
-						Connaissez vous Git ?<br />
-						🎤
-					</section>
-                    <section>
-						Git est le gestionnaire de versions le plus populaire, utilisé dans de nombreux projets open-source comme AngularJS, NodeJS,
-						Spring Framework, Bootstrap, Gradle...
-					</section>
-					<section>
-						Contrairement à SVN, Git a pour particularité d'être <b>décentralisé</b>.
-					</section>
-					<section>
-						<h4>Decentralisé</h4>
-						<p>Un dépôt local Git contient une <b>copie complète du repository distant</b> dans le dossier caché .git.
-                        C'est à dire, qu'en local, il est contenu les fichiers et dossiers et tout l'historique des changements fait sur ceux-ci​</p>
-                        
-						<p>Un dépôt local SVN ne contient que <b>les métadatas des fichiers</b>, le reste est stocké sur le serveur distant.​</p>
-					</section>
-                    <section>
-                        <h4>Centralisé (SVN, TFVC, etc)</h4>
-                        <img data-src="assets/centralise.png" style="height:60%; width:60%;">
-                    </section>
-                    <section>
-                        <h4>Décentralisé (Git)</h4>
-                        <img data-src="assets/decentralise.png" style="height:40%; width:40%;">
-                    </section>
-                    <section>
-                        <h4>Dépôt local</h4>
-                        <p>Un dossier sur votre ordinateur qui contient
-                        <ul>
-                          <li>Le dossier .git qui contient toute la configuration du repository git (historique des changements, etc)</li>
-                          <li>Vos fichiers et dossiers de code, documentation, etc</li>
-                        </ul></p>
-                        <img data-src="assets/depotLocal.png" style="height:40%; width:40%;">
-                    </section>
-					<section>
-                        L’avantage du mode décenstralisé est de pouvoir travailler en local indépendamment du serveur, puis envoyer les modifications seulement lorsque c’est nécessaire
-					</section>
-					<section>
-						<h4>Les 3 zones de Git</h4>
-                        <ul>
-                          <li><b>Répertoire de travail</b> (Working directory)</li>
-                          <li><b>Zone de transit</b> (Staging area)</li>
-                          <li><b>Dépôt local</b> (Repository)</li>
-                        </ul>
-					</section>
-					<section>
-                        <ul>
-                          <li><b>Répertoire de travail</b> : Où se trouve vos fichiers/dossiers de code, documentation</li>
-                          <li><b>Zone de transit</b> : Où se trouve les fichiers que vous vous apprétez à commit</li>
-                          <li><b>Dépôt local</b> : L'historique de chaque changements (commit)</li>
-                        </ul>
-					</section>
-					<section>
-						<img data-src="assets/threeZones.png">
-					</section>
-					<section>
-					<table>
-						<h5>Vocabulaire pour les 3 zones</h5>
-						<tr>
-							<td>Add</td>
-							<td>Ajouter des fichiers du <b>Working directory</b> au <b>Staging area</b></td>
-						</tr>
-						<tr>
-							<td>Commit</td>
-							<td>Valider la modifications de fichier et les transférer du <b>Staging area</b> au <b>Repository local</b></td>
-						</tr>
-						<tr>
-							<td>Checkout</td>
-							<td>Appliquer les modifications du <b>Repository local</b> dans le <b>Working directory</b></td>
-						</tr>
-					</table>
-					</section>
-					<section>
-						<h4>Branches</h4>
-						Pour chaque nouvelles fonctionnalités ou correction de bug, une branche est créée puis fusionnée à la branche principale, 
-						à la différence de SVN où une seule branche principale est utilisée.​
-					</section>
-					<section>
-							Chaque fonctionnalité / correction de bug est isolée dans une branche spécifique.
-							On s’assure simplement que la branche principale reste stable après l’intégration des différentes fonctionnalités et corrections de bug.​
-					</section>
-					<section>
-						<img data-src="assets/gitbranches.png">
-					</section>
+                	<section data-background-image="assets/start.webp" >
+                    	    <h1>Introduction</h1>
+                    	</section>
+			<section>
+				Connaissez vous Git ?<br />
+				🎤
+			</section>
+                    	<section>
+				Git est le gestionnaire de versions le plus populaire, utilisé dans de nombreux projets open-source comme AngularJS, NodeJS,
+				Spring Framework, Bootstrap, Gradle...
+			</section>
+			<section>
+				Contrairement à SVN, Git a pour particularité d'être <b>décentralisé</b>.
+				De plus dans SVN, il y a un dossier par branche, ce qui n'est pas le cas dans Git
+			</section>
+			<section>
+				<h4>Decentralisé</h4>
+				<p>Un dépôt local Git contient une <b>copie complète du repository distant</b> dans le dossier caché .git.
+				C'est à dire, qu'en local, il est contenu les fichiers et dossiers et tout l'historique des changements fait sur ceux-ci​</p>
+	
+				<p>Un dépôt local SVN ne contient que <b>les métadatas des fichiers</b>, le reste est stocké sur le serveur distant.​</p>
+			</section>
+			<section>
+				<h4>Centralisé (SVN, TFVC, etc)</h4>
+				<img data-src="assets/centralise.png" style="height:60%; width:60%;">
+			</section>
+			<section>
+				<h4>Décentralisé (Git)</h4>
+				<img data-src="assets/decentralise.png" style="height:40%; width:40%;">
+			</section>
+			<section>
+				<h4>Dépôt local</h4>
+				<p>Un dossier sur votre ordinateur qui contient
+				<ul>
+				<li>Le dossier .git qui contient toute la configuration du repository git (historique des changements, etc)</li>
+				<li>Vos fichiers et dossiers de code, documentation, etc</li>
+				</ul></p>
+				<img data-src="assets/depotLocal.png" style="height:40%; width:40%;">
+			</section>
+			<section>
+                        	L’avantage du mode décenstralisé est de pouvoir travailler en local indépendamment du serveur, puis envoyer les modifications seulement lorsque c’est nécessaire
+			</section>
+			<section>
+			<h4>Les 3 zones de Git</h4>
+				<ul>
+					<li><b>Répertoire de travail</b> (Working directory)</li>
+					<li><b>Zone de transit</b> (Staging area)</li>
+					<li><b>Dépôt local</b> (Repository)</li>
+				</ul>
+			</section>
+			<section>
+				<ul>
+					<li><b>Répertoire de travail</b> : Où se trouve vos fichiers/dossiers de code, documentation</li>
+					<li><b>Zone de transit</b> : Où se trouve les fichiers que vous vous apprétez à commit</li>
+					<li><b>Dépôt local</b> : L'historique de chaque changements (commit)</li>
+				</ul>
+			</section>
+			<section>
+				<img data-src="assets/threeZones.png">
+			</section>
+			<section>
+			<table>
+				<h5>Vocabulaire pour les 3 zones</h5>
+				<tr>
+					<td>Add</td>
+					<td>Ajouter des fichiers du <b>Working directory</b> au <b>Staging area</b></td>
+				</tr>
+				<tr>
+					<td>Commit</td>
+					<td>Valider la modifications des fichiers et les transférer du <b>Staging area</b> au <b>Repository local</b></td>
+				</tr>
+				<tr>
+					<td>Checkout</td>
+					<td>Appliquer les modifications du <b>Repository local</b> dans le <b>Working directory</b></td>
+				</tr>
+			</table>
+			</section>
+			<section>
+				<h4>Branches</h4>
+				Pour chaque nouvelles fonctionnalités ou correction de bug, une branche est créée puis fusionnée à la branche principale, 
+				à la différence de SVN où une seule branche principale est utilisée.​
+			</section>
+			<section>
+					Chaque fonctionnalité / correction de bug est isolée dans une branche spécifique.
+					On s’assure simplement que la branche principale reste stable après l’intégration des différentes fonctionnalités et corrections de bug.​
+			</section>
+			<section>
+				<img data-src="assets/gitbranches.png">
+			</section>
                 </section>
-				<!-- MODULE 04: Basic Git  -->
-				<section>
+		<!-- MODULE 04: Basic Git  -->
+		<section>
 					<section data-background-image="assets/lego.jpg"><h1>Git basics</h1></section>
                     <section>
 						<h4>La documentation 1</h4>
@@ -223,6 +234,12 @@
 								ls -al ~/.ssh
 							</code>
 						</pre>
+						Si erreur, c'est que le dossier n'existe pas, le créer
+						<pre>
+							<code data-trim>
+								mkdir ~/.ssh
+							</code>
+						</pre>
 						<br />🎨
 					</section>
                     <section>
@@ -241,7 +258,7 @@
                                 cat ~/.ssh/id_rsa.pub
 							</code>
 						</pre>
-						<p>Settings -> SSH and GPG keys</p>
+						<p>Sur Github : Settings -> SSH and GPG keys</p>
 						<br />🎨
 					</section>
                     <section>
@@ -249,6 +266,15 @@
 						<pre>
 							<code data-trim>
 								git clone https://github.com/StephenNunes/FormationGit
+							</code>
+						</pre>
+						<br />🎨
+					</section>
+                    <section>
+						Lire les slides
+						<pre>
+							<code data-trim>
+								start chrome "...\Formation Git\Slides\index.html"
 							</code>
 						</pre>
 						<br />🎨
@@ -310,6 +336,18 @@
 					</section>
 					<section>
 						<h4>Indexation 2</h4>
+						Il est possible de desindexer un fichier 
+						<pre>
+							<code data-trim>
+								git reset {fileName}
+								git reset newFolder/test1.txt
+								git status
+							</code>
+						</pre>
+						<br />🎨
+					</section>
+					<section>
+						<h4>Indexation 3</h4>
 						Pour la suppression d'un fichier et indéxer cette suppression
 						<pre>
 							<code data-trim>
@@ -321,7 +359,7 @@
 						<br />🎨
 					</section>
 					<section>
-						<h4>Indexation 3</h4>
+						<h4>Indexation 4</h4>
 						Pour déplacer un fichier du staging area
 						<pre>
 							<code data-trim>
@@ -332,17 +370,6 @@
 								git add test1.txt
 								git mv ./test1.txt newFolder/test1.txt
 								git status
-							</code>
-						</pre>
-						<br />🎨
-					</section>
-					<section>
-						<h4>Indexation 4</h4>
-						Il est possible de desindexer un fichier 
-						<pre>
-							<code data-trim>
-								git reset {fileName}
-								git reset newFolder/test1.txt
 							</code>
 						</pre>
 						<br />🎨
@@ -399,7 +426,8 @@
 								# Supprimer un remote
 								git remote rm {remoteName}
 
-								git remote add origin https://github.com/StephenNunes/test.git
+								git remote add origin https://github.com/StephenNunes/test
+								git remote rm origin
 							</code>
 						</pre>
 						<br />🎨
@@ -528,6 +556,67 @@
 						<br />🎨
 					</section>
 					<section>
+						<h4>Différences 1</h4>
+						Mise en place d'un fichier à comparer
+						<pre>
+							<code data-trim>
+								git checkout master
+								touch newfile.txt
+								vim newfile.txt # Add a line
+								git add .
+								git commit -m "Add new file"
+								git checkout -b "branchWithNewFile"
+								vim newfile.txt # Add another line
+								git add .
+								git commit -m "File modified"
+								git diff {branch1}..{branch2}
+								git diff branchWithNewFile..master
+							</code>
+						</pre>
+						<br />🎨
+					</section>
+					<section>
+						<h4>Différences 2</h4>
+						Comparer 2 branches
+						<pre>
+							<code data-trim>
+								git diff {branch1}..{branch2}
+								git diff myFeature..master
+							</code>
+						</pre>
+						<br />🎨
+					</section>
+					<section>
+						<h4>Différences 3</h4>
+						<p>Configurer un outil externe de comparaison de fichiers</p>
+						<pre>
+							<code data-trim>
+								git config --global --add diff.guitool winmerge 
+								git config --global --add difftool.winmerge.path "/c/Program\\ Files\\ \\(x86\\)/WinMerge/WinMergeU.exe" 
+								git config --global --add difftool.winmerge.trustExitCode false
+								vim ~/.gitconfig
+							</code>
+						</pre>
+						Ouvrir le fichier .gitconfig pour ajouter manuellement la ligne cmd
+						<pre>
+							<code data-trim>
+								cmd = "/c/Program\\ Files\\ \\(x86\\)/WinMerge/WinMergeU.exe" -e -wl -u -dl \"Local\" -dr \"Remote\" \"$LOCAL\" \"$REMOTE\"
+							</code>
+						</pre>
+						<br />🎨
+					</section>
+					<section>
+						<h4>Différences 4</h4>
+						<p>Utiliser l'outil externe de comparaison de fichiers</p>
+						<pre>
+							<code data-trim>
+								git difftool {branch1}..{branch2}
+								git difftool myFeature..master
+							</code>
+						</pre>
+						<br />🎨
+					</section>
+					<section>
 						<h4>Merge 1</h4>
 						On peut merger des modifications d'une autre branche sur la branche courante.
 						<pre>
@@ -599,9 +688,34 @@
 						<p>Configurer un outil externe de gestion de conflits</p>
 						<pre>
 							<code data-trim>
-								git config --global --add merge.tool kdiff3 
-								git config --global --add mergetool.kdiff3.path "C:/Program Files/KDiff3/kdiff3.exe" 
-								git config --global --add mergetool.kdiff3.trustExitCode false 
+								git config --global --add merge.tool winmerge
+								git config --global --add mergetool.winmerge.path "/c/Program\\ Files\\ \\(x86\\)/WinMerge/WinMergeU.exe" 
+								git config --global --add mergetool.winmerge.trustExitCode false
+								vim ~/.gitconfig
+							</code>
+						</pre>
+						Ouvrir le fichier .gitconfig pour ajouter manuellement la ligne cmd
+						<pre>
+							<code data-trim>
+								cmd = "/c/Program\\ Files\\ \\(x86\\)/WinMerge/WinMergeU.exe" -e -wl -u -dl \"Local\" -dr \"Remote\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+							</code>
+						</pre>
+						<br />🎨
+					</section>
+					<section>
+						<h4>Conflits 5</h4>
+						<p>Création d'une situation de conflit</p>
+						<pre>
+							<code data-trim>
+								git checkout master
+								touch fileInConflict.txt
+								vim fileInConflict.txt # Add 2 lines
+								git add .
+								git commit -m "add file"
+								git checkout -b branchWithConflict
+								vim fileInConflict.txt # Modify one line
+
+
 							</code>
 						</pre>
 						<br />🎨
@@ -639,30 +753,6 @@
 						<b>Préférez le Merge no fast forward</b>pour intégrer le code d'une branche dans une autre en gardant un historique le plus authentique possible
 					</section>
 					<section>
-						<h4>Différences 1</h4>
-						Toujours vérifier ses modifications avant de les commiter.
-						<pre>
-							<code data-trim>
-								git diff
-								git diff {branch1}..{branch2}
-								git diff myFeature..master
-							</code>
-						</pre>
-						<br />🎨
-					</section>
-					<section>
-						<h4>Différences 1</h4>
-						<p>Configurer un outil externe de comparaison de fichiers</p>
-						<pre>
-							<code data-trim>
-								git config --global --add diff.guitool kdiff3 
-								git config --global --add difftool.kdiff3.path "C:/Program Files/KDiff3/kdiff3.exe" 
-								git config --global --add difftool.kdiff3.trustExitCode false
-							</code>
-						</pre>
-						<br />🎨
-					</section>
-					<section>
 						<h4>Cherry-pick</h4>
 						Récupère les modifications présentes sur un commit d'une autre branche sur la branch actuelle, et applique ces modifications
 						<pre>
@@ -695,9 +785,21 @@
 						<br />🎨
 					</section>
 					<section>
-						<h4>.gitignore</h4>
+						<h4>.gitignore 1</h4>
 						Ignorer des fichiers pour ne pas les stage/commit dans votre dépôt<br />
 						<a href="https://www.toptal.com/developers/gitignore/">Création de fichiers .gitignore</a><br />
+						<br />🎨
+					</section>
+					<section>
+						<h4>.gitignore 2</h4>
+						Créer un .gitingore pour Java
+						<pre>
+							<code data-trim>
+								touch fichier.class
+								git status
+							</code>
+						</pre>
+						Fichier *.class ignoré
 						<br />🎨
 					</section>
 				</section>
@@ -713,7 +815,7 @@
 					</section>
 					<section>
 						<h4>Git Flow 1</h4>
-						Afin de garder une certaines cohérence dans le nom des branches pour s'y retrouver il faut définir un workflow de branches
+						Afin de garder une certaine cohérence dans le nom des branches pour s'y retrouver, il faut définir un workflow de branches
 					</section>
 					<section>
 						<h4>Git Flow 2</h4>
@@ -863,11 +965,11 @@
 						<pre>
 							<code data-trim>
 								git flow release finish {branchName}
-								git flow release finish "9.5.0.0"
+								git flow release finish "6.12.0.0"
 							</code>
 						</pre>
-						Merge la branche <b>release/9.5.0.0</b> dans la branche <b>master</b> et dans la branche <b>develop</b><br/>
-						et supprime la branche <b>release/9.5.0.0</b><br/>
+						Merge la branche <b>release/6.12.0.0</b> dans la branche <b>master</b> et dans la branche <b>develop</b><br/>
+						et supprime la branche <b>release/6.12.0.0</b><br/>
 						Cela ouvre Vi et demande un tag
 						<br />🎨
 					</section>
