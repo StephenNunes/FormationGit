@@ -710,11 +710,42 @@
 								touch fileInConflict.txt
 								vim fileInConflict.txt # Add 2 lines
 								git add .
-								git commit -m "add file"
+								git commit -m "added file"
 								git checkout -b branchWithConflict
-								vim fileInConflict.txt # Modify one line
+								vim fileInConflict.txt # Modifier une ligne du fichier dans la nouvelle branche
+								git add .
+								git commit -m "modify one line of file"
+								git checkout master
+								vim fileInConflict.txt # Modifier la même ligne que modifié précédement
+								git add .
+								git commit -m "modify the same line"
+								git merge branchWithConflict
+							</code>
+						</pre>
+						<pre>
+							<code data-trim>
+							</code>
+						</pre>
 
-
+						<br />🎨
+					</section>
+					<section>
+						<h4>Conflits 6</h4>
+						<p>Un conflit va être créé, pour le résoudre avec WinMerge, lancez cette commande</p>
+						<pre>
+							<code data-trim>
+								git mergetool
+							</code>
+						</pre>
+						<br />🎨
+					</section>
+					<section>
+						<h4>Conflits 7</h4>
+						<p>Une fois le conflit résolu dans WinMerge, vous pouvez ajouter le fichier et le commit</p>
+						<pre>
+							<code data-trim>
+								git add .
+								git commit -m "fix conflict"
 							</code>
 						</pre>
 						<br />🎨
