@@ -902,7 +902,7 @@
 						Les buts sont ici :
 						<ul>
 							<li>D'avoir une structure de branches simple</li>
-							<li>Pouvoir gérer plusieurs versions d'applications en production</li>
+							<li>Pouvoir gérer plusieurs versions d'applications en production, en recette, etc</li>
 							<li>Se baser sur un modèle Trunk-Based Development</li>
 						</ul>
 					</section>
@@ -923,7 +923,7 @@
 					<section>
 						<h4>Release Flow 4 - Type de branches 2</h4>
 						<ul>
-							<li><b>release/</b> : Branches créées à la fin de chaque sprint depuis la branche <b>master</b> et dont le code est déployée en production. Plusieurs branches release peuvent exister en parallèle et permettent de gérer plusieurs versions de l'application sur plusieurs instances de production.</li>
+							<li><b>release/</b> : Branches créées à chaque livraison, chaque release de l'application depuis la branche <b>master</b> et dont le code est déployée en production ou sur environnement de recette. Plusieurs branches release peuvent exister en parallèle et permettent de gérer plusieurs versions de l'application sur plusieurs environnements.</li>
 						</ul>
 					</section>
 					<section>
@@ -933,22 +933,14 @@
 						</ul>
 					</section>
 					<section>
-						<h4>Release Flow 6 - Exemple de branches Release flow</h4>
-						<ul>
-							<li>topic/DatabaseRefactoring</li>
-							<li>release/43</li>
-							<li>hotfix/NullReferenceException</li>
-						</ul>
-					</section>
-					<section>
-						<h4>Release Flow 7 - Hotfix</h4>
+						<h4>Release Flow 6 - Hotfix</h4>
 						Le but de merger la branche <b>hotfix</b> dans la branche <b>master</b> et de faire un cherry-pick dans la branche <b>release</b> est d'intégrer le correctif effectué directement dans la prochaine release de l'application faite depuis la branche <b>master</b><br />
 						Cela évite d'oublier d'intégrer le correctif dans la prochaine version de l'application dans le cas où la branche <b>hotfix</b> serait mergée dans la branche <b>release</b><br />
-						En effet, l'intégration du correctif dans la branche <b>master</b> est aussi important que son intégration dans la branche <b>release</b>
+						En effet, l'intégration du correctif dans la branche <b>master</b> est aussi importante que son intégration dans la branche <b>release</b>
 					</section>
 					<section>
-						<h4>Release Flow 8 - Merge de branhces</h4>
-						Le merge des branches <b>topic</b> et <b>hotfix</b> se font via Pull Request, c'est à dire que le merge ne se fait pas en local via les commandes git, mais via l'outil de forge (GitLab, Azure DevOps) ou les modifications seront validées par un tiers dans l'équipe (Leader technique, autre développeur, etc)
+						<h4>Release Flow 7 - Merge de branches</h4>
+						Le merge des branches <b>topic</b> et <b>hotfix</b> se font via Merge Request, c'est à dire que le merge ne se fait pas en local via les commandes git, mais via l'outil de forge (GitLab, Azure DevOps) où les modifications seront relues et validées par un tiers dans l'équipe (Leader technique, autre développeur, etc)
 					</section>
 				</section>
 			</div>
