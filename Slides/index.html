@@ -51,10 +51,7 @@
 				<h1>Installation</h1><br />
                     	</section>
                     	<section>
-                        	Sur PC Michelin<br />
-                        	Git sur Centre logiciel (Peut mettre du temps à s'actualiser)<br />
-				<img data-src="assets/gitCentreLogiciel.png" style="height:70%; width:70%;"><br />
-                        	Sinon : Téléchargement de Git<br />
+                        	Téléchargement de Git pour utilisation en ligne de commande<br />
                         	<a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a>
 				<br/>🎨
 			</section>
@@ -833,7 +830,7 @@
 						<br />🎨
 					</section>
 				</section>
-                <!-- MODULE 04: Workflows Git -->
+                <!-- MODULE 04: Workflows Git - Git flow -->
 				<section>
 					<section data-background-image="assets/gitFlow.png" data-background-size="60%">
 						<h1>Git Flow</h1>
@@ -889,167 +886,73 @@
                           <li>hotfix/WebScreen</li>
                         </ul>
 					</section>
-					<section>
-						<h4>Manipulation de Git Flow 1</h4>
-                        Git flow est-il installé ?
-						<pre>
-							<code data-trim>
-								git flow
-							</code>
-						</pre>
-						<img data-src="assets/gitFlowCommand.png" style="height:50%; width:50%;">
-						<br />🎨
+				</section>
+				<section>
+					<section data-background-image="assets/releaseFlow.png" data-background-size="60%">
+						<h1>Release Flow</h1>
 					</section>
 					<section>
-						<h4>Manipulation de Git Flow 2</h4>
-                        Documentation
-						<pre>
-							<code data-trim>
-								git flow help
-								git flow {branchName} help
-								git flow feature help
-								git flow feature start --help
-							</code>
-						</pre>
-						<br />🎨
+						<h4>Sources</h4>
+						<a href="https://devblogs.microsoft.com/devops/release-flow-how-we-do-branching-on-the-vsts-team/">Release flow</a><br />
+						<a href="https://trunkbaseddevelopment.com/">Trunk-Based Development</a><br />
 					</section>
 					<section>
-						<h4>Manipulation de Git Flow 3</h4>
-						Initié un projet Git Flow
-						<pre>
-							<code data-trim>
-								git checkout master
-								git checkout -b develop
-								git flow init 
-							</code>
-						</pre>
-						Créer la branche <b>master</b> et <b>develop</b>, puis initier git flow
-						<br />🎨
+						<h4>Release Flow 1</h4>
+						Stratégie de branches imaginée et mise en place par Microsoft.
+						Les buts sont ici :
+						<ul>
+							<li>D'avoir une structure de branches simple</li>
+							<li>Pouvoir gérer plusieurs versions d'applications en production</li>
+							<li>Se baser sur un modèle Trunk-Based Development</li>
+						</ul>
 					</section>
 					<section>
-						<h4>Manipulation de Git Flow 4</h4>
-						Création d'une branch feature/
-						<pre>
-							<code data-trim>
-								git flow feature start {branchName}
-								git flow feature start "screenEC784"
-							</code>
-						</pre>
-						Crée la branche <b>feature/screenEC784</b> depuis la branche <b>develop</b>
-						<br />🎨
+						<h4>Release Flow 2 - Trunk-Based Development</h4>
+						Trunk-Based Development, c'est le fait d'avoir une seule branche où tout l'équipe travail dessus.<br />
+						Par exemple, une branche master ou main.<br />
+						Cela a pour but d'éviter de devoir résoudre beaucoup de conflicts, de devoir faire de gros merges.<br />
+						La conséquence est que cette branche ne contient pas forcément une version stable de l'application à chaque instant
 					</section>
 					<section>
-						<h4>Manipulation de Git Flow 5</h4>
-						Création d'une branch feature/ à partir d'une autre branche feature/
-						<pre>
-							<code data-trim>
-								git flow feature start {branchNameToCreate} {branchNameSource}
-								git flow feature start "testWebApi" "feature/screenEC784"
-							</code>
-						</pre>
-						Crée la branche <b>feature/testWebApi</b> depuis la branche <b>feature/screenEC784</b>
-						<br />🎨
+						<h4>Release Flow 3 - Type de branches 1</h4>
+						<ul>
+							<li><b>master</b> : Branche principale unique, contient toutes les dernières modifications faites dans les autres branches. Ne contient pas forcément une version stable de l'application</li>
+							<li><b>topic/</b> :  Branches créées pour chaque nouvelle fonctionnalité ayant pour source la branche <b>master</b></li>
+						</ul>
 					</section>
 					<section>
-						<h4>Manipulation de Git Flow 6</h4>
-						Terminer une branche feature/ et la merger dans la branche develop ou la branche feature/ source<br />
-						L'option --no-ff permet de faire un merge no fast-forward
-						<pre>
-							<code data-trim>
-								git flow feature finish --no-ff {branchName}
-								git flow feature finish --no-ff "databaseConnection"
-							</code>
-						</pre>
-						L'option --no-ff permet ici de faire un merge no fast-forward, donc de créer un commit de merge<br />
-						Merge la branche <b>feature/databaseConnection</b> dans <b>develop</b> et supprime la branche <b>feature/databaseConnection</b>
-						<br />🎨
+						<h4>Release Flow 4 - Type de branches 2</h4>
+						<ul>
+							<li><b>release/</b> : Branches créées à la fin de chaque sprint depuis la branche <b>master</b> et dont le code est déployée en production. Plusieurs branches release peuvent exister en parallèle et permettent de gérer plusieurs versions de l'application sur plusieurs instances de production.</li>
+						</ul>
 					</section>
 					<section>
-						<h4>Manipulation de Git Flow 6</h4>
-						Terminer une branche feature/ en spécifiant ou la merger
-						<pre>
-							<code data-trim>
-								git flow feature finish --no-ff {branchNameToFinish} {sourceBranchName}
-								git flow feature finish --no-ff "testWebApi" "feature/screenEC784"
-							</code>
-						</pre>
-						L'option --no-ff permet ici de faire un merge no fast-forward, donc de créer un commit de merge.<br />
-						Merge la branche <b>feature/databaseConnection</b> dans <b>develop</b> et supprime la branche <b>feature/databaseConnection</b>
-						<br />🎨
+						<h4>Release Flow 5 - Type de branches 3</h4>
+						<ul>
+							<li><b>hotfix/</b> :  Branches créées à partir de la branche <b>master</b> pour réaliser un correctif. Une fois le correctif réalisé, la branche <b>hotfix/</b> est mergée dans la branche <b>master</b> et chaque commit fait sur cette branch hotfix sont cherry-pick dans la branche <b>release</b> correspondante où doit être réalisé le <b>hotfix</b></li>
+						</ul>
 					</section>
 					<section>
-						<h4>Manipulation de Git Flow 7</h4>
-						Création d'une branch release/ depuis develop
-						<pre>
-							<code data-trim>
-								git flow release start {branchName}
-								git flow release start "6.12.0.0"
-							</code>
-						</pre>
-						Crée la branche <b>release/6.12.0.0</b> depuis la branche <b>develop</b>
-						<br />🎨
+						<h4>Release Flow 6 - Exemple de branches Release flow</h4>
+						<ul>
+							<li>topic/DatabaseRefactoring</li>
+							<li>release/43</li>
+							<li>hotfix/NullReferenceException</li>
+						</ul>
 					</section>
 					<section>
-						<h4>Manipulation de Git Flow 8</h4>
-						Terminer une branch release/ 
-						<pre>
-							<code data-trim>
-								git flow release finish {branchName}
-								git flow release finish "6.12.0.0"
-							</code>
-						</pre>
-						Merge la branche <b>release/6.12.0.0</b> dans la branche <b>master</b> et dans la branche <b>develop</b><br/>
-						et supprime la branche <b>release/6.12.0.0</b><br/>
-						Cela ouvre Vi et demande un tag
-						<br />🎨
+						<h4>Release Flow 7 - Hotfix</h4>
+						Le but de merger la branche <b>hotfix</b> dans la branche <b>master</b> et de faire un cherry-pick dans la branche <b>release</b> est d'intégrer le correctif effectué directement dans la prochaine release de l'application faite depuis la branche <b>master</b><br />
+						Cela évite d'oublier d'intégrer le correctif dans la prochaine version de l'application dans le cas où la branche <b>hotfix</b> serait mergée dans la branche <b>release</b><br />
+						En effet, l'intégration du correctif dans la branche <b>master</b> est aussi important que son intégration dans la branche <b>release</b>
 					</section>
 					<section>
-						<h4>Manipulation de Git Flow 9</h4>
-						Création de branche support/
-						<pre>
-							<code data-trim>
-								git flow support start {branchName} {sourceBranchName}
-								git flow support start "6.2" "master"
-								{sourceBranchName} est obligatoire
-							</code>
-						</pre>
-						Crée la branche <b>support/6.2</b> depuis la branche <b>master</b>
-						<br />🎨
-					</section>
-					<section>
-						<h4>Manipulation de Git Flow 10</h4>
-						Création de branche hotfix/ depuis une branche support/
-						<pre>
-							<code data-trim>
-								git flow hotfix start {branchName} {sourceBranchName}
-								git flow hotfix start "bugWebScreen" "support/6.2"
-							</code>
-						</pre>
-						Crée la branche <b>hotfix/bugWebScreen</b> depuis la branche <b>support/6.2</b>
-						<br />🎨
-					</section>
-					<section>
-						<h4>Manipulation de Git Flow 11</h4>
-						Terminer et merger une branche hotfix/ dans sa branche support/ source
-						<pre>
-							<code data-trim>
-								git flow hotfix finish {branchName} -T {tagHotFixsourceBranchName}
-								git flow hotfix finish "bugWebScreen" -T "6.2.0.1"
-							</code>
-						</pre>
-						Merge la branche <b>hotfix/bugWebScreen</b> dans la branche <b>support/6.2</b> avec le tag 6.2.0.1
-						La branche <b>hotfix/bugWebScreen</b> est supprimée
-						Ici l'option --no-ff n'est pas nécessaire car le merge d'une branche hotfix/ sera no fast forward par défaut
-						<br />🎨
-					</section>
-					<section>
-						<h4>Git Flow</h4>
-						Git flow permet de définir une structure de branches et de s'abtraire des commandes de merge/rebase.<br />
-						Cela facilite l'utilisation de Git.
+						<h4>Release Flow 8 - Merge de branhces</h4>
+						Le merge des branches <b>topic</b> et <b>hotfix</b> se font via Pull Request, c'est à dire que le merge ne se fait pas en local via les commandes git, mais via l'outil de forge (GitLab, Azure DevOps) ou les modifications seront validées par un tiers dans l'équipe (Leader technique, autre développeur, etc)
 					</section>
 				</section>
 			</div>
-				<section>
+		<section>
         </div>
 
 		<script src="lib/js/head.min.js"></script>
