@@ -67,7 +67,7 @@
 			<section>
 				Création du Personal Access Token sur github.com<br/>
 				Settings -> Developer settings -> Personal access tokens -> Generate new token -> Check all -> Generate token<br/>
-				<img data-src="assets/githubPat.png" style="height:70%; width:70%;">
+				<img data-src="assets/githubPat.png" style="height:70%; width:70%;"><br />
 				Le Personal Access Token sera à utiliser à la place de votre mot de passe lors du 'push'
 				<br/>🎨
 			</section>
@@ -170,27 +170,28 @@
                 </section>
 		<!-- MODULE 04: Basic Git  -->
 		<section>
-					<section data-background-image="assets/lego.jpg"><h1>Git basics</h1></section>
-                    <section>
-						<h4>La documentation 1</h4>
-						<pre>
-							<code data-trim data-noescape>
-								git help
-								git {command} --help
-								git config --help
-							</code>
-						</pre>
-						<br />🎨
-					</section>
-                    <section>
-						<h4>La documentation 2</h4>
-						<p>
-							<a href="https://git-scm.com/docs/">Documentation (Anglaise)</a><br />
-							<a href="https://www.atlassian.com/fr/git/tutorials/setting-up-a-repository">Documentation (Française)</a>
-						</p>
-					</section>
-                    <section>
-						La liste des configurations actuelles
+			<section data-background-image="assets/lego.jpg"><h1>Git basics</h1></section>
+                        	<section>
+					<h4>La documentation 1</h4>
+					<pre>
+						<code data-trim data-noescape>
+							git help
+							git {command} --help
+							git config --help
+						</code>
+					</pre>
+					<br />🎨
+				</section>
+      		                <section>
+					<h4>La documentation 2</h4>
+					<p>
+						<a href="https://git-scm.com/docs/">Documentation (Anglaise)</a><br />
+						<a href="https://www.atlassian.com/fr/git/tutorials/setting-up-a-repository">Documentation (Française)</a>
+					</p>
+				</section>
+      			        <section>
+					<h4>Configurer Git 1</h4>
+					La liste des configurations actuelles
 						<pre>
 							<code data-trim data-noescape>
 								git config -l
@@ -199,6 +200,7 @@
 						<br />🎨
 					</section>
 					<section>
+						<h4>Configurer Git 2</h4>
 						Identifier l'auteur de chaque modification du repository
 						<pre>
 							<code data-trim data-noescape>
@@ -209,6 +211,7 @@
 						<br />🎨
 					</section>
 					<section>
+						<h4>Configurer Git 3</h4>
 						Vous prendrez bien un peu de couleurs ?
 						<pre>
 							<code data-trim data-noescape>
@@ -218,7 +221,7 @@
 						<br />🎨
 					</section>
 					<section>
-						<h4>Configurer Git 1</h4>
+						<h4>Configurer Git 4</h4>
 						<pre>
 							<code data-trim>
                                 git config --global http.sslVerify false
@@ -227,13 +230,14 @@
 						<br />🎨
 					</section>
 					<section>
-						<h4>Configurer Git 2</h4>
+						<h4>Configurer Git 5</h4>
 						<pre>
 							<code data-trim>
 								ls -al ~/.ssh
 							</code>
 						</pre>
 						Si erreur, c'est que le dossier n'existe pas, le créer
+						Si le dossier est, passez à la slide suivante
 						<pre>
 							<code data-trim>
 								mkdir ~/.ssh
@@ -242,7 +246,7 @@
 						<br />🎨
 					</section>
                     <section>
-						<h4>Configurer Git 3</h4>
+						<h4>Configurer Git 6</h4>
 						<pre>
 							<code data-trim>
 								ssh-keygen -t rsa -b 4096 -C "monaddressemail@domaine.com"
@@ -251,7 +255,7 @@
 						<br />🎨
 					</section>
                     <section>
-						<h4>Configurer Git 4</h4>
+						<h4>Configurer Git 7</h4>
 						<pre>
 							<code data-trim>
                                 cat ~/.ssh/id_rsa.pub
@@ -270,10 +274,21 @@
 						<br />🎨
 					</section>
                     <section>
-						Lire les slides
+						Lire les slides 1
 						<pre>
 							<code data-trim>
-								start chrome "...\Formation Git\Slides\index.html"
+								start chrome ".\Formation Git\Slides\index.html"
+							</code>
+						</pre>
+						Attention, 2 branches ReleaseFlow et master
+						<br />🎨
+					</section>
+					<section>
+						Lire les slides 2
+						<pre>
+							<code data-trim>
+								git fetch --all
+								git checkout ReleaseFlow
 							</code>
 						</pre>
 						<br />🎨
@@ -327,6 +342,8 @@
 								git add README.md
 								# Ajouter tous les fichiers et dossiers avec leurs sous-fichiers et sous-dossiers
 								git add . 
+								# Ajouter seulement les fichiers qui ont été déjà commit
+								git add -u
 								git status
 							</code>
 						</pre>
@@ -340,6 +357,7 @@
 							<code data-trim>
 								git reset {fileName}
 								git reset newFolder/test1.txt
+								git reset .
 								git status
 							</code>
 						</pre>
@@ -381,6 +399,8 @@
 								git commit
 								# Vi est ouvert dans la console, "i" pour écrire, ":wq" pour sauvegarder et quitter 
 								git commit -m "feat: Initial Commit"
+								# Modifier le texte de votre dernier Commit
+								git commit --amend -m "Fix commit text"
 							</code>
 						</pre>
 						<br />🎨
@@ -393,6 +413,7 @@
 							<code data-trim>
 								git log 
 								git log --pretty=oneline --abbrev-commit
+								git log --reserve
 							</code>
 						</pre>
 						<br />🎨
@@ -416,6 +437,34 @@
 					</section>
 					<section>
 						<h4>Remotes 2</h4>
+						<img data-src="assets/repoGithub.png" style="height:70%; width:70%;">
+						<img data-src="assets/repoGithub2.png" style="height:70%; width:70%;">
+						<br />🎨
+					</section>
+					<section>
+						<h4>Remotes 3</h4>
+						<img data-src="assets/repoGithub3.png" style="height:70%; width:70%;">
+						<br />🎨
+					</section>
+					<section>
+						<h4>Remotes 4</h4>
+						<pre>
+							<code data-trim>
+								# Ajouter un remote
+								git remote add {remoteName} {remoteAdress}
+								# Lister les remotes 
+								git remote -v
+								# Supprimer un remote
+								git remote rm {remoteName}
+
+								git remote add origin https://github.com/StephenNunes/test
+								git remote rm origin
+							</code>
+						</pre>
+						<br />🎨
+					</section>
+					<section>
+						<h4>Remotes 5</h4>
 						<pre>
 							<code data-trim>
 								# Ajouter un remote
@@ -471,9 +520,7 @@
 						Revenir à l'état de la branche remote
 						<pre>
 							<code data-trim>
-								git reset HEAD {remoteName}/{branchName}
-								git reset HEAD origin/master
-								git reset --hard origin/master
+								git reset --hard {remoteName}/{branchName}
 							</code>
 						</pre>
 						<br />🎨
@@ -568,8 +615,6 @@
 								vim newfile.txt # Add another line
 								git add .
 								git commit -m "File modified"
-								git diff {branch1}..{branch2}
-								git diff branchWithNewFile..master
 							</code>
 						</pre>
 						<br />🎨
@@ -579,8 +624,8 @@
 						Comparer 2 branches
 						<pre>
 							<code data-trim>
-								git diff {branch1}..{branch2}
-								git diff myFeature..master
+								git diff {branch1} {branch2}
+								git diff branchWithNewFile master
 							</code>
 						</pre>
 						<br />🎨
@@ -590,7 +635,7 @@
 						<p>Configurer un outil externe de comparaison de fichiers</p>
 						<pre>
 							<code data-trim>
-								git config --global --add diff.guitool winmerge 
+								git config --global --add diff.tool winmerge 
 								git config --global --add difftool.winmerge.path "/c/Program\\ Files\\ \\(x86\\)/WinMerge/WinMergeU.exe" 
 								git config --global --add difftool.winmerge.trustExitCode false
 								vim ~/.gitconfig
@@ -609,8 +654,8 @@
 						<p>Utiliser l'outil externe de comparaison de fichiers</p>
 						<pre>
 							<code data-trim>
-								git difftool {branch1}..{branch2}
-								git difftool myFeature..master
+								git difftool {branch1} {branch2}
+								git difftool myFeature master
 							</code>
 						</pre>
 						<br />🎨
@@ -648,6 +693,7 @@
 							<code data-trim>
 								git merge --no-ff {branchNameWhereModificationsGot}
 								git merge --no-ff master
+								git merge --no-ff master -m "Merge master into myFeature branch"
 							</code>
 						</pre>
 						<br />🎨
@@ -741,10 +787,17 @@
 					</section>
 					<section>
 						<h4>Conflits 7</h4>
+						<p>Dans WinMerge, le 3ème fichier (le plus à droite) sera le résultat de votre résolution de conflit<br />
+						Une fois que vous avez résolu votre conflit, cliquez sur sauvegarder et vous pouvez quitter WinMerge</p>
+						<br />🎨
+					</section>
+					<section>
+						<h4>Conflits 8</h4>
 						<p>Une fois le conflit résolu dans WinMerge, vous pouvez ajouter le fichier et le commit</p>
 						<pre>
 							<code data-trim>
-								git add .
+								git add fileInConflict.txt
+								# Attention au fichier .bak et .orig créé par WinMerge et Git
 								git commit -m "fix conflict"
 							</code>
 						</pre>
@@ -780,14 +833,29 @@
 					<section>
 						<h4>Merge vs Rebase</h4>
 						Rebase permet de ré-écrire l'historique des commit, par conséquent je ne le conseille pas au que dans des cas très particuliers comme le squash de commit d'un feature<br />
-						<b>Préférez le Merge no fast forward</b>pour intégrer le code d'une branche dans une autre en gardant un historique le plus authentique possible
+						<b>Préférez le Merge no fast forward</b> pour intégrer le code d'une branche dans une autre en gardant un historique le plus authentique possible
 					</section>
 					<section>
-						<h4>Cherry-pick</h4>
+						<h4>Cherry-pick 1</h4>
 						Récupère les modifications présentes sur un commit d'une autre branche sur la branch actuelle, et applique ces modifications
 						<pre>
 							<code data-trim>
-								git cherry-pick {sha1} 
+								git cherry-pick {hash} 
+							</code>
+						</pre>
+						<br />🎨
+					</section>
+					<section>
+						<h4>Cherry-pick 2</h4>
+						<pre>
+							<code data-trim>
+								git checkout master
+								git touch file.txt
+								git add .
+								git commit -m "added file"
+								git log --pretty=oneline --abbrev-commit
+								git checkout -b branch2
+								git cherry-pick {hash}
 							</code>
 						</pre>
 						<br />🎨
@@ -822,7 +890,7 @@
 					</section>
 					<section>
 						<h4>.gitignore 2</h4>
-						Créer un .gitingore pour Java
+						Créer un .gitignore pour Java
 						<pre>
 							<code data-trim>
 								touch fichier.class
